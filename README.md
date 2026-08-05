@@ -1,4 +1,6 @@
 # Curso BackEnd - 225 - Técnico em Desenvolvimento de sistemas - SENAI
+29/07/2026
+---
 
 Profº Diogo TB
 
@@ -17,11 +19,11 @@ Escola SENAI Americana
 - Arquitetura MVC (Model, View, Controller);
 - Utilização do FrameWork Laravel; 
 
-obs: framework - um conjunto de bibliotecas que oferecem uma solução completa para o desinvolvimento de alguma coisa.
+Obs: framework - um conjunto de bibliotecas que oferecem uma solução completa para o desinvolvimento de alguma coisa.
 
 ## Cronograma do Semestre
 
-Carga Horároa: 105h 1º Semestre e 120h 2º Semestre
+Carga Horária: 1º Semestre 105h e 2º Semestre 120h
 
 Duração: 20 Semanas 1º Semestre e 20 Semanas 2º Semestre
 
@@ -86,3 +88,72 @@ Plataformas, conteúdo, usuários
 **HTTP**, Hypertext Transfer Protocol, é um protocolo de comunicação utilizado para transferencia de informações na WWWW (World Wide Web) e em outros sistemas de redes.
 
 O HTTP é a base para que o cliente e um servidor web troquem de informações. Ele permite a requisição e a respostas de recursos como, imagens, arquivos e textos.
+
+```mermaid
+graph TD
+A[Navegador]
+B[HTTP]
+C[Servidor]
+
+A-->|resquest|B
+B-->|resquest|C
+C-->|resquest|B
+B-->|resquest|A
+```
+---
+## Como funciona na Prática o BackEnd
+
+- **Ação do Usuário:** Envia uma solicitação pela UI (Interface do Usuário/ User Interface). 
+> Exemplo de UI:
+`-Tela do celular;`
+`- Navegador da internet;`
+`- Alexa;`
+`-IOT.`
+- **Enviar uma Requisição:** A UI transoforma a ação do Usuário em uma requisição HTTP.
+-**O processamento BackEnd:** O código BackEnd recebe o pedido, válida os dados e decide o que fazer. 
+>`Ex: Consultar uma informação no BD (Banco de Dados)`.
+
+-**Respostas:** O servidor devolve o resultado para a UI. 
+>`Ex: Um login autorizado, Confirmação de compra,..`
+
+#### Tipos de Requisisão HTTP
+
+Os tipos de requisição HTTP indicam a ação que o usuário deseja executar no servidor.
+As principais são:
+
+-**Get:**
+> Pede dados de um lugar especifico do servidor. "Não faz alterações no servidor".
+
+-**Delete:**
+> Apaga um dado do servidor.
+
+-**Post:**
+> Envia dados novos para *criar* algo ou processar informações no servidor.
+
+-**Put/Patch:**
+> Modifica um dado já existente
+---
+>`Put: Muda os dados de forma integralmente/completa`
+
+>`Patch: Muda os dados de forma parcial`
+---
+#### Iniciando o PHP 
+
+**PHP** (HyperText PreProcessor) é uma linguagem de programação interpretada e open source, focada no desenvolvimento de sistemas para WEB, e pode ser usada junto com HTML para a criação de páginas web dinãmicas.
+
+O PHP de fato é uma das linguagens de programação mais populares da atualidade. Ela permite que você crie aplicações WEB robustas, de uma maneira muito mais simplificada e direta. A linguagem tem diversos recursos que facilitam e aceleram o `processo de desenvolvimento de sites e sistemas para a web. E além do mais, ela ainda tem um ótimo ecossistema, uma excelente comunidade e um grande mercado de trabalho.
+
+---
+#### Instalando o PHP
+
+- Fazer o Download do PHP (php.net)
+- ZIP - NTS (Non Thread Safe) 8.5
+- Descompactar o Arquivo do PHP na pasta C:src\php (para descompactar, usar o ZIP7 --> Melhor) --> nunca salvar arquivos ou programas na raiz do sistema (C:)
+- Adicionar a Pasta do PHP (C:\src\php) as variáveis de Ambiente do sistema (PATH)
+- Verificar a instalação rodando o comando:
+```bash
+php --version
+```
+---
+
+##### Criando Minha Primeira Aplicação em PHP
