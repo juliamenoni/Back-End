@@ -156,4 +156,3 @@ php --version
 ```
 ---
 
-##### Criando Minha Primeira Aplicação em PHP
