@@ -148,11 +148,87 @@ O PHP de fato é uma das linguagens de programação mais populares da atualidad
 
 - Fazer o Download do PHP (php.net)
 - ZIP - NTS (Non Thread Safe) 8.5
-- Descompactar o Arquivo do PHP na pasta C:src\php (para descompactar, usar o ZIP7 --> Melhor) --> nunca salvar arquivos ou programas na raiz do sistema (C:)
+- Descompactar o Arquivo do PHP na pasta C:\src\php (para descompactar, usar o ZIP7 --> Melhor) --> nunca salvar arquivos ou programas na raiz do sistema (C:)
 - Adicionar a Pasta do PHP (C:\src\php) as variáveis de Ambiente do sistema (PATH)
 - Verificar a instalação rodando o comando:
 ```bash
 php --version
 ```
 ---
+Para acessar a página PHP, usar o comando no terminal:
+```Bash
+php -S localhost:8080
+```
+---
+#### Criando Minha Primeira Aplicação em PHP
 
+>1.0 Antes de começar a Codar:
+
+* Preparar meu VSCODE
+* Criar um profile próprio para PHP
+* Instalar Extensões Necessárias para transformar o meu VSCODE em uma IDE
+    - PHP Intelephense -> **Permite a utilização de Snippets (atalhos de código)**
+    - PHP Debug -> **Ajuda a encontrar erros de código**
+    - PHP Cs Fixer -> **Formatação de códigco (identação)**
+    - PHP Server -> **Ajuda na criação de um servidor local para PHP**
+* Desabilitamos o PHP nativo do VSCODE (@bultinPHP)
+
+>2.0 Hello World (Muito Importante!)
+
+#### Estudo de Variáveis e Constantes em PHP
+
+Declarar variáveis é alocar um espaço na memória que permite a inclusão e manipulação de dados.
+ 
+ **Variáveis**
+
+ - Devem ser declaradas usando um "$" antes do nome da variável
+ - São não tipadas (Não precisa declarar o tipo dela na criação)
+ - Podem ser String, Numéricas (Int e Float), Booleanas e Nulas. Não permite declaração de Undefined
+
+ >REGRA DE OURO: Usar o "declare(Strict_types=1);" na primeira linha do arquivo -> blinda o sistema contra conflitos de tipos de variáveis
+
+ **Constantes**
+ - Não podem ser mudadas ou redeclaradas após a criação
+ - Pode ser criada usando "const" ou "define"
+ - Não permite interpolação
+
+#### Estudo de Operadores
+
+**Aritméticos**: São usados para realizar cálculos
+
+| Operador | Nome | Exemplo | Resultado |
+| - | - | - | - |
+| + | Adição | 10+5 | 15 |
+| - | Subtração | 10-5 | 5 |
+| * | Multiplicação | 10*5 | 50
+| / | Divisão | 10/5 | 2 | 
+| % | Modulo(resto) |10%3| 1 (10 div 3 da 3, e sobra **1**)
+|**| Expoente | 2**3| 8 (2 elevado a 3)
+
+**Relacionais**: Permite o relacionamento entre dois ou mais valores, o resulado de uma operação é sempre uma booleana (Verdadeiro ou Falso).
+
+| Operador | Significado | Exemplo | Resultado |
+| - | - | - | - |
+| > | Maior que | 18 > 18 | false |
+| < | Menor que | 10 > 20 | true | 
+| >= | Maior ou igual a | 18 > 18 | true |
+| <= | Menor ou igual a | 10 <= 5 | false |
+| ==| Comparação de valor | "10"==10 | true |
+| === | Comparação estrita | "10===10 | false |
+|!=| Diferente | "10"!10| false |
+| !== | Estritamente diferente | "10"!==10| true |
+
+**Lógicos**:
+Permite a combinação entre sentenças
+
+- Operador AND (E) -> &&: para o resultado ser verdadeiro, todas as combinações precisam ser verdadeiras
+    - true && true => true
+    - true && false => false
+
+- Operador OR (OU) -> ||: para o resultado ser verdadeiro, basta apenas uma condição ser verdadeira
+    -false || true => true
+    -false || false => false
+
+- Operador NOT (NÃO) => !: Inverte a lógica da operação
+    - !true => false
+    - !false => true
