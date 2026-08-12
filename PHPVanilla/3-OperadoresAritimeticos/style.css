@@ -1,0 +1,24 @@
+body {
+    background-color: aliceblue;
+    margin: 0 auto;
+    text-align: center;
+}
+
+table{
+    border-collapse: collapse;
+    width: 400px;
+    font-family: sans-serif;
+}
+
+th{
+    border: 1px solid #da0689;
+    padding: 8px;
+    text-align: right;
+    background-color: #eb4bb5;
+    font-weight: bold;
+}
+td { 
+    border: 1px solid #fa0795;
+    padding: 8px;
+    text-align: left;
+}

@@ -160,6 +160,7 @@ Para acessar a página PHP, usar o comando no terminal:
 php -S localhost:8080
 ```
 ---
+#### Semana 2 - Varíáveis e constantes e operadores em PHP
 #### Criando Minha Primeira Aplicação em PHP
 
 >1.0 Antes de começar a Codar:
@@ -214,7 +215,7 @@ Declarar variáveis é alocar um espaço na memória que permite a inclusão e m
 | >= | Maior ou igual a | 18 > 18 | true |
 | <= | Menor ou igual a | 10 <= 5 | false |
 | ==| Comparação de valor | "10"==10 | true |
-| === | Comparação estrita | "10===10 | false |
+| === | Comparação estrita | "10"===10 | false |
 |!=| Diferente | "10"!10| false |
 | !== | Estritamente diferente | "10"!==10| true |
 
@@ -232,3 +233,51 @@ Permite a combinação entre sentenças
 - Operador NOT (NÃO) => !: Inverte a lógica da operação
     - !true => false
     - !false => true
+
+--- 
+### Semana 3  Estrutura de dados (Condicionais e repetição)
+
+- **Conteúdo**:
+ Estrutura 
+ operdadores ternários ->`if`,`else`,`elseif` 
+substituto do switch/case -> `match` 
+loops -> `for`,`while`,`do-while`,`forach`
+
+## Estruturas de controle de dados ajudam no processo de automatização em programas e sistemas
+
+### Condiciomais (IF,ELSE,ELSEIF)
+
+**Formas de uso**
+
+- uso do `if`apenas:
+Exemplo: aplicar desconto de 10% em compras acima de 100 reais.
+
+```mermaid
+graph LR
+
+A[Comando] --> B{Condição} --> C[Ação]
+```
+---
+```php
+if($valorCompra > 100){
+    $valorFinal = $valorCompra * 0.9;
+}
+```
+
+- Uso do `if` e do `else`
+Exemplo: Aplicar um desconto de 10% para compras acima de 100 reais e 5% paraa as demais compras
+ 
+ ```mermaid
+ graph LR
+ A[Comando] --> B{Condição}
+ B --> |true| C[Ação 1]
+ B --> |false| D[Ação 2}
+ ``` 
+ 
+ ```php
+ if ($valorCompra > 100){
+    $valorFinal = $valorCompra * 0.9;
+ } else{
+    $valorFinaç = $valorCompra * 0.95;
+ }
+ ```
