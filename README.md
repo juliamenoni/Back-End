@@ -271,7 +271,7 @@ Exemplo: Aplicar um desconto de 10% para compras acima de 100 reais e 5% paraa a
  graph LR
  A[Comando] --> B{Condição}
  B --> |true| C[Ação 1]
- B --> |false| D[Ação 2}
+ B --> |false| D[Ação 2]
  ``` 
  
  ```php
