@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-// EExercício 5 - Carrinho de Compras
+// Exercício 5 - Carrinho de Compras
 
 function calcularCarrinho(array $produtos): float
 {
