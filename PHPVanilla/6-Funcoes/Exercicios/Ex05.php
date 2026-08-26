@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-// EXERCÍCIO 5 - Carrinho de Compras
+// EExercício 5 - Carrinho de Compras
 
 function calcularCarrinho(array $produtos): float
 {
@@ -29,5 +29,5 @@ $produtos = [
 
 $total = calcularCarrinho($produtos);
 
-echo "Exercício 5 - Carrinho de Compras";
+echo "Exercício 5 - Carrinho de Compras"."\n";
 echo "Total da compra: R$ " . number_format($total, 2, ',', '.');

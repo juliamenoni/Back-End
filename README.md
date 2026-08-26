@@ -656,5 +656,5 @@ $nome = "João";
 ```
 A função `saudar()`não conhece a variável global `$nome`
 
-> **Resumo** varíaveis protegem os dados internos da função; parâmetros são um o caminho recomendado para evitar erros e enviar informações, e `return`é usado para devolver um resultao ao código que chamou a função.
+> **Resumo:** varíaveis protegem os dados internos da função; parâmetros são um o caminho recomendado para evitar erros e enviar informações, e `return`é usado para devolver um resultao ao código que chamou a função.
 

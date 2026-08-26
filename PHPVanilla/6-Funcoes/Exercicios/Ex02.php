@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-// EXERCÍCIO 2 - Classificação de IMC
+// Exercício 2 - Classificação de IMC
 
 $imc1 = calcularIMC(100, 1.75);
 $imc2 = calcularIMC(95, 1.60);
@@ -20,7 +20,7 @@ function classificarIMC(float $imc): string
     }
 }
 
-echo "Exercício 2 - Classificação de IMC<br>";
+echo "Exercício 2 - Classificação de IMC";
 echo "IMC 1: " . number_format($imc1, 2, ',', '.') .
      " - " . classificarIMC($imc1);
 
