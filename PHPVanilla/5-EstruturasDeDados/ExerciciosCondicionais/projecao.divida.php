@@ -24,4 +24,4 @@ for ($mes = 1; $mes <= 12; $mes++) {
     echo "Mes $mes:\n";
     echo "Juros: R$ " . number_format($juros, 2, ',', '.') . "\n";
     echo "Saldo: R$ " . number_format($divida, 2, ',', '.') . "\n";
-}
+};

@@ -22,4 +22,5 @@ echo "0 - Sair\n";
 echo "===============================";
 $opcao = readline();
 //Usar uma estrutura para abrir possibilidade de código
-}while($opcao==0);
+
+} while($opcao==0);
