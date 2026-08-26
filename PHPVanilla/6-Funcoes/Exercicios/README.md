@@ -1,5 +1,6 @@
 ### LISTA DE EXERCÍCIOS: FUNÇÕES EM PHP
 Julia Guerra Menoni
+
 -- Parte A: Exercícios Teóricos -- 
 
 **1.0 Conceito de função:** *Explique com suas palavras o que é uma função e cite duas vantagens de dividir um programa em funções.*
