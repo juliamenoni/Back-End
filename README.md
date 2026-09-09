@@ -1,4 +1,4 @@
-# Curso BackEnd - 225 - Técnico em Desenvolvimento de sistemas - SENAI
+# Curso BackEnd - 225h - Técnico em Desenvolvimento de sistemas - SENAI
 29/07/2026
 ---
 
@@ -764,3 +764,49 @@ Exibe com mais detalhes as informações de um array ou variáveis em PHP
 echo var_dump($frutas);
 // Mostrar tudo: tipo de dados, o tamanho e valor
 ```
+---
+
+### Semana 6 - Processamento HTTP e Formulários WEB
+
+#### Anatomia de um Formulário HTML para BackEnd
+
+Antes do PHP processar qualquer informação, precisamos coletar informações no FrontEnd através de um `<form>`
+
+**Exemplo de `<form>`HTML**
+
+```html
+<form action = "processar.php" method="POST">
+    <label>Nome Completo</label>
+    <input type: "text" id= "campoNome" name= "nomeUsuario" placeholder= "Digite seu nome">
+    <button type= "submit">Cadastrar</button>
+</form>
+```
+
+**Os pilares de um formulário**
+1. Action = "processa.php" -> O destino: define qual script PHP no servidor receberá os dados
+2. method= "POST" -> o Transporte: Define a via de protocolo HTTP que será usada (GET ou POST)
+3. name="nomeUsuario" -> A etiqueta do Dado: é um nome da chave que o PHP usará no array associativo ($_POST["nomeUsuario"])
+
+>OBS: Nunca confundir `id` com `name`no input, o PHP ignora o `id`.
+
+#### O protocolo HTTP
+
+Quando o usuário clica no botão `type="submit"`, o navegador compila todas as informações dos campos preenchidos e dispara um pacote de comunicação padronizado pelo **Protocolo HTTP (HyperText Transfer Protocol).**
+
+**Os formatos de Transferência**
+
+>`Método GET`: solicitar informações públicas e realizar buscas, mas altamente arriscado para dados privados.
+
+>`Método POST`: As informações viajam guardadas dentro do protocolo.
+
+#### Testar o uso dos protocolos HTTP
+
+#### GET vs POST
+
+1. O Método GET (Consultas e filtros)
+
+O método `GET`é uilizado quando a intenção do cliente é **buscar ou filtrar dados** sem alterar o estado do servidor. Os dados enviados via `GET` são anexados diretamente ao final da URL na forma de uma *QUERY STRING*.
+
+2. O Método POST (Envio de Cargas úteis e mutações)
+
+O método `POST`é utilizado quando o formulário envia dados que devem ser processados para **criar ou modificar** no sistema (Ex: Cadastro de usuários, finalizações de compra, upload de arquivos).
