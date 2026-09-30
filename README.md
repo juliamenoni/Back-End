@@ -1182,3 +1182,151 @@ Quando uma tentativa de conexão falha(servidor desligado, senha incorreta, port
 
 * **Para o Usuário**: Exibir mensagens amigáveis e genéricas: *Não é possível processar sua solicitação.*
 * * **Para a Equipe de Desenvolvimento**: Gravar os detalhes técnicos da falha com timestamp(carimbo de data e hora) em um arquivo de log seguro (`log/database.log`);
+
+----
+### Semana 9 - CRUD completo com Prepared Statements e Proteção contra SQL Injection 
+
+**Tema: Operações CRUD, vulnerabilidade SQL Injection (OWASP top 10), consultas preparadas com PDO (`prepare`,`bindValue`,`execute`), Marcadores nomeados e padrão de arquitetura DAO (DATA ACCESS OBJECT)
+
+Em qualquer organização, o objetivo central de um sistema de software é manipular informações com segurança, velocidade e consistência. Essa manipulação se resume a quatro operações fundamentais que todo desenvolvedor BackEnd deve dominar com perfeição, essas operações são conhecidas pelo acrônimo **CRUD**
+
+```mermaid
+flowchart TB
+    subgraph CRUD ["As 4 Operações Fundamentais"]
+        C["<b>C</b>reate (Criar)"] --> |"Comando SQL"| SQL_I["INSERT INTO ..."]
+        R["<b>R</b>ead (Ler)"] --> |"Comando SQL"| SQL_S["SELECT ... FROM ..."]
+        U["<b>U</b>pdate (Atualizar)"] --> |"Comando SQL"| SQL_U["UPDATE ... WHERE ..."]
+        D["<b>D</b>elete (Excluir)"] --> |"Comando SQL"| SQL_D["DELETE FROM ... WHERE ..."]
+    end
+
+    style C fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d
+    style R fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a
+    style U fill:#fef9c3,stroke:#ca8a04,stroke-width:2px,color:#713f12
+    style D fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#7f1d1d
+```
+
+Na semana 08, aprendemos a como conectar usando a extensão PDO e utilizando o padrão sigleton. Agora, vamos dar vida a essa conexão: Aprenderemos a inserir novos registros, consultar com filtros diâmicos e remover e atualizar dados com segurança.
+
+### **A maior ameaça da história da WEB: SQL Injection (`SQLi`)**
+
+Antes de escrever a primeira query de manipulação, precisamos compreender o periodo que cerca o acesso o banco de dados.
+
+A vulnerabilidade **SQL Injection** que ocupa o topo das listas mais críticas de cibersegurança. Ela Ocorre quando um desenvolvedor comete um erro gravíssimo de **concatenar entradas fornecidas pelo usuário diretamente na instrução SQL**
+
+**Exemplo de Código Proibido (Concatenação de String)**
+
+Imagina um sistema que valida o login de um operador da seguinte forma:
+
+```php
+//Codigo Vulnerável e Perigoso - NUNCA FAÇA ISSO!
+$usuario = $_POST["usuario"];
+$senha = $_POST["senha"];
+// o invasor digita no campo usuário: admin' --
+
+$sql = "SELECT * FROM usuarios WHERE login = '".$usuario . "'AND senha= '" .$senha ."'";
+$resultado = $pdo->query($sql)
+```
+1. A aspa digita pelo atacante fecha a string do login antecipadamente
+2. O operador `--`no Banco de Dados indica o **início de um comentário** 
+3. O restante da query (a validação de senha) é ignorada pelo morto de busca do banco
+4. **Resultado:** o invasor faz login instantaneamente na conta do administrador sem precisar saber a senha. 
+
+**3 Cenários Mais utilizados de SQL Injection**
+
+| Tipo de Injeção | Payload Injetado pelo Invasor | Consequência no PostgreSQL |
+| :--- | :--- | :--- |
+| **Bypass de Autenticação** | `' OR '1'='1` | A condição torna-se sempre verdadeira, retornando o primeiro usuário da tabela (geralmente o administrador do sistema). |
+| **Exfiltração de Dados (UNION SQLi)** | `' UNION SELECT id, nome, senha FROM usuarios --` | O invasor anexa tabelas sigilosas inteiras no resultado da consulta visível na tela, violando a LGPD. |
+| **Destruição / Adulteração (Stack Queries)** | `'; DROP TABLE pecas_industriais; --` | Dependendo do driver e das permissões do usuário, o invasor encerra a consulta atual e executa comandos de destruição em massa. |
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant app as aplicação PHP
+     participant SGBD as PostgreSQL
+
+    Note over App, SGBD: FLUXO SEGURO COM PREPARED STATEMENT
+    App->>SGBD: 1. PREPARE: "SELECT * FROM usuarios WHERE lofin = :user"
+    Note over SGBD: Compila a query, gera o plano de execução<br/>e define que :user É ESTRITAMENTE DADO!
+    SGBD-->>App: Query compilada pronta para receber parâmetros
+    App->>SGBD: 2. EXECUTE: [":user" => "admin' --"]
+    Note over SGBD: O Banco busca literalmente um usuário<br/>cujo nome seja "admin' --". Nenhuma tag vira código!
+    SGBD-->>App: Retorna registro ou vazio (Sem Invasão!)
+```
+
+**Por que a consulta preparada (`prepare`) é imune a injeções??**
+
+quando utilizamos `$pdo->prepare()`, ocorre uma **separação física e temporal** entre o **comando SQL** e os **dados do usuário**:
+
+1. **Fase de Compilação(`prepare`)**: O BAnco recebe o molde da instrução com marcadores (`:parametros`). Ele analisa a sintaxe, otimiza o caminho de busca e compila o plano de execução. A estrutura lógica da consulta está **fechada e congelada**
+2. **Fase de Envio dos Dados (`execute`)**: O PHP envia apenas os valores literais. Memso que o invasor envie aspas, ponto-e-vírgula ou comandos `DROP`, o Banco tratará tudo exclusivamente como um texto inofensivo pertencente aquele campo.
+
+---
+
+### Marcadores nomeados e posicionais no PDO
+
+O PDO aceita dois formatos de marcadores em prepared statements
+
+1. **Marcador Posicional (`?`)**
+
+```php
+//funcioma, mas é sujeito a erros de contagem de parametros em queries longas
+$sql = "INSERT INTO usuarios (id, nome, email, telefone) VALUES (?, ?, ?, ?)";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$id, $nome, $email, $telefone]);
+```
+2. **Marcadores Nomeados (`:nome`) - Padrão Recomendado**
+
+```php
+// Autenticação Autoexplicativa, altamente legível e a prova de inversão de ordem
+$sql = "INSERT INTO usuarios (id, nome, email, telefone) VALUE (:id, :nome, :email, :telefone)";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([
+    ":id"       => $id,
+    ":nome"     => $nome,
+    ":email"    => $email,
+    ":telefone  => $telefone
+])
+```
+#### **Método de Vinculação de Valores: `bindValue()` Vs. `bindParam()`**
+
+Ao associar parâmetros a uma consulta `prepare`, pode-se utilizar dois métodos com comportamentos distintos. o `bindValue()` ou o `bindParam()`, o primeiro vincula um valor fixo no momento da chamada, enquanto o segundo vincula uma variável por referência e só avalia o valor real quando a consultal é executada.
+
+**Exemplo `bindValue()`**: Associa o valor exato da variável naquele momento, é mais comum e seguro para 95% dos casos de uso.
+```php
+$id = 10;
+$stmt->bindValue(":id", $id, PDO::PARAM_INT);
+$id = 20; //não altera o valor que já foi passado no bindValue!
+$stmt->execute(); //executa com id = 10
+```
+
+**Exemplo `bindParam()`**: Associa a variável como uma referência de memória (`&`). O valor é lido no momento exato da chamada `execute`. Usar apenas em loops ou situações específicas que precisa alterar o valor repetidamente.
+```php
+$id = 10;
+$stmt->bindParam(":id", $id, PDO::PARAM_INT);
+$id = 20; //altera o valor de referência
+$stmt->execute(); // executa com o ID = 20
+```
+
+>obs: Tipagem Explícita com Constantes do PDO:
+>Para Garantir que o PostgreSQL interprete corretamente o tipo de dado, inform-se sempre a constante correspondente:
+> * `PDO::PARAM_INT`: Para chaves primárias, quantidades e inteiros.
+> * `PDO::PARAM_STR`: Para textos, strings, datas e números decimais (`NUMERIC`).
+> * `PDO::PARAM_BOOL`: Para valores booleanos (`true`/`false`).
+> * `PDO::PARAM_NULL`: Para passar valores nulos explícitos.
+
+### O padrão de arquitetura DAO (DATA ACCESS OBJECT)
+
+Em aplicações proficionais, comando SQL nunca devem ser escritos diretamente dentro de arquivps de interface visual (como páginas HTML ou controladores de tela)
+
+Para separar a **lógica de apresentação** da **lógica de acesso a dados**, usa-se o padrão de projetos **DAO(DATA ACCESS OBJECT)**:
+
+```mermaid
+flowchart
+    A["Interface web/Controlador<br/>(index.php)"]
+    B["Classe DAO<br/>(LógicaDAO.php)"]
+    C["SGBD<br/>(banco_dados)"]
+
+    A --> |"Chama métodos:<br/>salvar(), listar(), excluir()" | B
+    B --> |"Executa Prepared Statement<br/>via PDO" | C
+```
