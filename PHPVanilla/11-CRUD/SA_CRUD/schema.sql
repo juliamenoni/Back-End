@@ -1,3 +1,4 @@
+--Criação do banco
 CREATE DATABASE almoxarifado_senai WITH ENCODING 'UTF8';
 
 -- Criação da tabela de peças industriais do almoxarifado

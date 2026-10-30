@@ -5,21 +5,15 @@ declare(strict_types=1);
  * Gerenciador de conexao unica com o PostgreSQL via PDO (Singleton).
  */
 final class ConexaoBanco {
-    //atributo -> armazena o PDO
     private static ?PDO $instancia = null;
 
-    //métodos
-    private function __construct() {} //construtor em classe tipo singleton são privados
-
-
-    //metodos de proteção
+    private function __construct() {}
     private function __clone(): void {}
 
     public function __wakeup(): void {
         throw new \Exception("Desserializacao nao permitida.");
     }
 
-    
     /**
      * Retorna a conexao ativa existente ou instancia uma nova sob demanda.
      */
@@ -56,7 +50,7 @@ final class ConexaoBanco {
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::ATTR_EMULATE_PREPARES   => false,
-            PDO::ATTR_TIMEOUT            => 5
+            PDO::ATTR_TIMEOUT            => 10
         ];
 
         return new PDO($dsn, $cfg['db_user'], $cfg['db_pass'], $opcoes);
