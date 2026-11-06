@@ -1,12 +1,10 @@
-# Curso BackEnd - 225h - Técnico em Desenvolvimento de sistemas - SENAI
-29/07/2026
----
+## Curso BackEnd - 225h - Técnico em Desenvolvimento de Sistemas - SENAI
 
 Profº Diogo TB
 
-Escola SENAI Americana
+Escola SENAI 
 
-2º Semestre 2025
+2º Semestre 2026
 
 ## Objetivos do Curso
 
@@ -17,275 +15,280 @@ Escola SENAI Americana
 - Segurança contra SQL Injection/CSRF;
 - Refatoração em POO (Programação Orientada ao Objeto);
 - Arquitetura MVC (Model, View, Controller);
-- Utilização do FrameWork Laravel; 
+- Utilização do Framework Laravel.
 
-Obs: framework - um conjunto de bibliotecas que oferecem uma solução completa para o desinvolvimento de alguma coisa.
+> ***OBS:*** Framework -> Conjunto de bibliotecas/ferramentas que oferecem uma solução completa para o desenvolvimento de alguma coisa.
 
 ## Cronograma do Semestre
 
-Carga Horária: 1º Semestre 105h e 2º Semestre 120h
+**Carga Horária:** 105h (1º Semestre) e 120h (2º Semestre)
 
-Duração: 20 Semanas 1º Semestre e 20 Semanas 2º Semestre
+**Duração:** 20 Semanas (1º Semestre) e 20 Semanas (2º Semestre)
 
 ---
+---
 
-### Semana 1: Introdução ao BackEnd e Configuração do Ambiente PHP
+## SEMANA 1 - Introdução ao BackEnd e Configuração do Ambiente PHP
 
-#### O que é BackEnd?
- 
- O back-end é a parte de uma aplicação que o usuário não vê, mas que faz tudo funcionar por trás das telas.
+### O que é BackEnd?
 
-O Back-End é a parte de um sistema que funciona nos servidores, sendo responsável por executar a lógica da aplicação, processar informações e armazenar dados. 
+`É a resposta/requisição do usuário!!!`
 
-Além disso, o BackEnd é responsável por atender ás solicitações do Frontend.
+- **Requisição:** É o pedido enviado por um cliente (como um navegador ou aplicativo) para um servidor com o objetivo de buscar, enviar, atualizar ou apagar dados.
 
-Sobre o mercado atual:o cenário é bom, mas mais exigente do que era. Quem conhece só o básico enfrenta mais concorrência. Quem alia backend sólido com IA aplicada, cloud e inglês está num patamar completamente diferente 
-vagas internacionais remotas são uma realidade pra esse perfil.
+#### **Tipos de Requisição HTTP**
 
-O Backend é formado pelo servidor, banco de dados, lógica de programação com APIs e linguagens de programação/frameworks. Esses componentes trabalham juntos para processar dados, armazenar informações e garantir o funcionamento da aplicação.
+Os tipos de requisição HTTP indicam a ação que o usuário deseja executar no servidor. As principais ações são:
 
-# Para que serve
--Processar lógica de negócio: regras, cálculos, validações (ex: calcular frete, aplicar desconto, validar login)
+- **GET:** Pede dados de um lugar específico do servidor. Não faz alterações no servidor.
+- **DELETE:** Apaga um dado do servidor.
+- **POST:** Envia dados novos para *criar* algo ou processar informações no servidor.
+- **PUT/PATCH:** Modifica um dado já existente.
+>**PUT:** Modificação completa de um objeto/item.
 
--Gerenciar banco de dados: salvar, buscar, atualizar e deletar informações
+>**PATCH:** Modificação parcial de um objeto/item.
+---
 
--Autenticação e autorização: controlar quem pode acessar o quê (login, senhas, permissões)
+O BackEnd é a parte de uma aplicação que o usuário não vê, mas que faz tudo funcionar por trás das telas.
 
--Fornecer APIs: criar "pontes" (endpoints) para o frontend ou outros sistemas consumirem dados
+Ele é a parte de um sistema que funciona nos servidores, sendo responsável por executar a lógica da aplicação, processar informações, aplicar as regras de negócio, gerenciar bancos de dados/armazenar dados e garantir o funcionamento correto do sistema.
 
--Integração com serviços externos: pagamentos, e-mails, notificações, APIs de terceiros
+Sempre que um usuário realiza uma ação, como fazer login ou efetuar uma compra, o backend recebe a solicitação, processa os dados e envia a resposta ao frontend. Além disso, também é responsável pela segurança, integração entre sistemas e armazenamento das informações, sendo essencial para o funcionamento de sites, aplicativos e diversos serviços digitais.
 
--Segurança: proteger dados sensíveis, evitar ataques (SQL injection, XSS, etc.)
+Além disso, o BackEnd é responsável por atender às solicitações do FrontEnd.
 
--Escalabilidade e performance: garantir que o sistema aguente muitos usuários ao mesmo tempo.
+Ele é formado pelo servidor, banco de dados, lógica de programação com APIs e linguagens de programação/frameworks. Esses componentes trabalham juntos para processar dados, armazenar informações e garantir o funcionamento da aplicação.
 
+#### Para que serve
 
-# Principais Tecnologias Linguagens de programação: 
- Ferramentas usadas para escrever o código do servidor, como Python, Node.js (JavaScript), Java e PHP.APIs: Os "caminhos" que permitem que o que você vê no celular converse com o servidor.
+- **Processar lógica de negócio:** regras, cálculos, validações (ex: calcular frete, aplicar desconto, validar login)
 
+- **Gerenciar banco de dados:** salvar, buscar, atualizar e deletar informações
 
- Fintechs e Bancos
-Segurança, transações, alta escala 
+- **Autenticação e autorização:** controlar quem pode acessar o quê (login, senhas, permissões)
 
-E-commerce
-Catálogo, pedidos, pagamentos
+- **Fornecer APIs:** criar "pontes" (endpoints) para o frontend ou outros sistemas consumirem dados
 
-Healthtechs
-Prontuários, telemedicina
+- **Integração com serviços externos:** pagamentos, e-mails, notificações, APIs de terceiros
 
-SaaS / Startups
-Backend é o coração do produto
+- **Segurança:** proteger dados sensíveis, evitar ataques (SQL injection, XSS, etc.)
 
-Logística
-Rastreio, rotas, tempo real
+- **Escalabilidade e performance:** garantir que o sistema aguente muitos usuários ao mesmo tempo.
 
-Educação
-Plataformas, conteúdo, usuários
+#### Principais Linguagens de Programação
 
-#### O Ciclo de vida da Requisição HTTP
+Ferramentas usadas para escrever o código do servidor, como Python, Node.js (JavaScript), Java e PHP.APIs: Os "caminhos" que permitem que o que você vê no celular converse com o servidor.
 
-#### O que é HTTP?
-**HTTP**, Hypertext Transfer Protocol, é um protocolo de comunicação utilizado para transferencia de informações na WWWW (World Wide Web) e em outros sistemas de redes.
+**Áreas de Atuação**
+- Fintechs e Bancos
+- Segurança, transações, alta escala 
+- E-commerce
+- Catálogo, pedidos, pagamentos
+- Healthtechs
+- Prontuários, telemedicina
+- SaaS / Startups
+- Logística
+- Rastreio, rotas, tempo real
+- Educação
+- Plataformas, conteúdo, usuários
+---
 
-O HTTP é a base para que o cliente e um servidor web troquem de informações. Ele permite a requisição e a respostas de recursos como, imagens, arquivos e textos.
+### O que é HTTP?
+
+*HTTP*, Hypertext Transfer Protocol, é um protocolo de comunicação utilizado para transferência de informações na WWW (World Wide Web) e em outros sistemas de redes.
+
+O HTTP é a base para que o cliente e um servidor web troquem informações. Ele permite a requisição e a resposta de recursos como imagens, arquivos e textos.
 
 ```mermaid
+
 graph TD
-A[Navegador]
-B[HTTP]
-C[Servidor]
+    
+    A[Navegador]
+    B[HTTP]
+    C[Servidor]
 
-A-->|resquest|B
-B-->|resquest|C
-C-->|resquest|B
-B-->|resquest|A
+    A --> |request| B
+    B --> |request| C
+    C --> |response| B
+    B --> |response| A
+
 ```
----
-## Como funciona na Prática o BackEnd
 
-- **Ação do Usuário:** Envia uma solicitação pela UI (Interface do Usuário/ User Interface). 
-> Exemplo de UI:
-`-Tela do celular;`
-`- Navegador da internet;`
-`- Alexa;`
-`-IOT.`
-- **Enviar uma Requisição:** A UI transoforma a ação do Usuário em uma requisição HTTP.
--**O processamento BackEnd:** O código BackEnd recebe o pedido, válida os dados e decide o que fazer. 
->`Ex: Consultar uma informação no BD (Banco de Dados)`.
+#### Como funciona o BackEnd na prática
 
--**Respostas:** O servidor devolve o resultado para a UI. 
->`Ex: Um login autorizado, Confirmação de compra,..`
-
-#### Tipos de Requisisão HTTP
-
-Os tipos de requisição HTTP indicam a ação que o usuário deseja executar no servidor.
-As principais são:
-
--**Get:**
-> Pede dados de um lugar especifico do servidor. "Não faz alterações no servidor".
-
--**Delete:**
-> Apaga um dado do servidor.
-
--**Post:**
-> Envia dados novos para *criar* algo ou processar informações no servidor.
-
--**Put/Patch:**
-> Modifica um dado já existente
----
->`Put: Muda os dados de forma integralmente/completa`
-
->`Patch: Muda os dados de forma parcial`
----
-#### Iniciando o PHP 
-
-**PHP** (HyperText PreProcessor) é uma linguagem de programação interpretada e open source, focada no desenvolvimento de sistemas para WEB, e pode ser usada junto com HTML para a criação de páginas web dinãmicas.
-
-O PHP de fato é uma das linguagens de programação mais populares da atualidade. Ela permite que você crie aplicações WEB robustas, de uma maneira muito mais simplificada e direta. A linguagem tem diversos recursos que facilitam e aceleram o `processo de desenvolvimento de sites e sistemas para a web. E além do mais, ela ainda tem um ótimo ecossistema, uma excelente comunidade e um grande mercado de trabalho.
+- **Ação do Usuário:** Envia uma solicitação pela UI (Interface do Usuário).
+**Exemplo de UI:** Tela do Celular, Navegador da Internet, Alexa, IOT...
+- **Enviar uma Requisição/Request:** A UI transforma a ação do usuário em uma Requisição HTTP.
+- **O Processamento BackEnd:** O código BackEnd recebe o pedido, valida os dados e decide o que fazer.
+**Exemplo:** Consultar uma informação no Banco de Dados.
+- **Resposta/Response:** O servidor devolde o resultado para a UI.
+**Exemplo:** Um login autorizado, confirmação de uma compra...
 
 ---
+### Iniciando o PHP
+
+**PHP** (HyperText PreProcessor) é uma linguagem de programação interpretada e open source, focada no desenvolvimento de sistemas para web. Pode ser usada junto com HTML para criação de páginas web dinâmicas.
+
+O **PHP** de fato é uma das linguagens de programação mais populares da atualidade. Ela permite que você crie aplicações web robustas, de uma maneira muito simplificada e direta. A linguagem tem diversos recursos que facilitam e aceleram o processo de desenvolvimento de sites e sistemas para web. E além do mais, ela tem um ótimo ecossistema, uma excelente comunidade e um grande mercado de trabalho.
+
 #### Instalando o PHP
 
-- Fazer o Download do PHP (php.net)
-- ZIP - NTS (Non Thread Safe) 8.5
-- Descompactar o Arquivo do PHP na pasta C:\src\php (para descompactar, usar o ZIP7 --> Melhor) --> nunca salvar arquivos ou programas na raiz do sistema (C:)
-- Adicionar a Pasta do PHP (C:\src\php) as variáveis de Ambiente do sistema (PATH)
-- Verificar a instalação rodando o comando:
-```bash
-php --version
-```
----
-Para acessar a página PHP, usar o comando no terminal:
-```Bash
-php -S localhost:8080
-```
----
-#### Semana 2 - Varíáveis e constantes e operadores em PHP
+- Fazer o download do PHP (php.net).
+
+- ZIP -> NTS (Non Thread Safe), versão 8.5.9
+
+- Descompactar o arquivo do PHP na pasta *C:\src\php* (para descompactar, usar o *7-Zip* = melhor).
+
+- ***Nunca salvar arquivos ou programas na raiz do sistema (C:)***!!!
+
+- Adicionar a pasta do PHP (*C:\src\php*) nas Variáveis de Ambiente do sistema (*PATH*).
+
+>Verificar a instalação rodando o comando: `php --version`.
+
 #### Criando Minha Primeira Aplicação em PHP
 
->1.0 Antes de começar a Codar:
+1. Antes de começar a codar:
 
-* Preparar meu VSCODE
-* Criar um profile próprio para PHP
-* Instalar Extensões Necessárias para transformar o meu VSCODE em uma IDE
-    - PHP Intelephense -> **Permite a utilização de Snippets (atalhos de código)**
-    - PHP Debug -> **Ajuda a encontrar erros de código**
-    - PHP Cs Fixer -> **Formatação de códigco (identação)**
-    - PHP Server -> **Ajuda na criação de um servidor local para PHP**
-* Desabilitamos o PHP nativo do VSCODE (@bultinPHP)
+- Preparar meu VSCODE;
+- Criar um Profile próprio para PHP;
+- Instalar extensões necessárias para transformar o VSCode em uma IDE:
+    - **PHP Intelephense** -> Permite a utilização de Snippets (atalho de código)
+    - **PHP Debug** -> Ajuda a encontrar erros de código
+    - **PHP Cs Fixer** -> Formatação de códigos (Identação)
+    - **PHP Server** -> Ajuda na criação de um servidor local para PHP
+- Desabilitar o PHP Nativo do VSCode (@builtin PHP).
 
->2.0 Hello World (Muito Importante!)
+---
+> Esse comando inicializa a aplicação PHP:
+> `php -S localhost:8080`
+
+---
+2. Hello World ***(muito importante)*** ;)
+
+---
+---
+## SEMANA 2 - Variáveis, Constantes e Operadores em PHP
 
 #### Estudo de Variáveis e Constantes em PHP
 
-Declarar variáveis é alocar um espaço na memória que permite a inclusão e manipulação de dados.
- 
- **Variáveis**
+Declarar variávies é alocar um espaço na memória que permite a inclusão e manipulação de dados. 
 
- - Devem ser declaradas usando um "$" antes do nome da variável
- - São não tipadas (Não precisa declarar o tipo dela na criação)
- - Podem ser String, Numéricas (Int e Float), Booleanas e Nulas. Não permite declaração de Undefined
+**Variávies:**
 
- >REGRA DE OURO: Usar o "declare(Strict_types=1);" na primeira linha do arquivo -> blinda o sistema contra conflitos de tipos de variáveis
+- devem ser declaradas usando "$" antes do nome da variável
+- são não tipadas (não precisa declarar o tipo dela na criação)
+- podem ser String, Numéricas (int/interger e float), Booleanas e Nulas; não permite declaração de Undefined
+> Usar o `declare(strict_types=1);` na primeira linha do arquivo -> blinda o sistema contra conflitos de tipos de variáveis
 
- **Constantes**
- - Não podem ser mudadas ou redeclaradas após a criação
- - Pode ser criada usando "const" ou "define"
- - Não permite interpolação
+**Constantes:**
 
-#### Estudo de Operadores
+- não podem ser mudadas ou recicladas após a criação
+- podem ser criadas usando `const`ou `define`
+- não permite ***interpolação*** (utilização de variáveis dentro de um texto, utilizando aspas duplas)
 
-**Aritméticos**: São usados para realizar cálculos
+---
+### Estudo de Operadores
 
-| Operador | Nome | Exemplo | Resultado |
-| - | - | - | - |
-| + | Adição | 10+5 | 15 |
-| - | Subtração | 10-5 | 5 |
-| * | Multiplicação | 10*5 | 50
-| / | Divisão | 10/5 | 2 | 
-| % | Modulo(resto) |10%3| 1 (10 div 3 da 3, e sobra **1**)
-|**| Expoente | 2**3| 8 (2 elevado a 3)
+**Aritméticos:** São usados para realizar cálculos.
+|Operador|Nome|Exemplo|Resultado|
+|--------|----|-------|---------|
+|+|Adição|10+5|15|
+|-|Subtração|10-5|5|
+|*|Multiplicação|10*5|50
+|/|Divisão|10/5|2|
+|%|Módulo (resto)|10%3|1 (10/3 = 3, ou seja, sobra 1)|
+|**|Expoente|2**3|8|
 
-**Relacionais**: Permite o relacionamento entre dois ou mais valores, o resulado de uma operação é sempre uma booleana (Verdadeiro ou Falso).
+> ***OBS:*** O Operador % permite ordenar listas e organizar filas e pilhas.
 
-| Operador | Significado | Exemplo | Resultado |
-| - | - | - | - |
-| > | Maior que | 18 > 18 | false |
-| < | Menor que | 10 > 20 | true | 
-| >= | Maior ou igual a | 18 > 18 | true |
-| <= | Menor ou igual a | 10 <= 5 | false |
-| ==| Comparação de valor | "10"==10 | true |
-| === | Comparação estrita | "10"===10 | false |
-|!=| Diferente | "10"!10| false |
-| !== | Estritamente diferente | "10"!==10| true |
+---
 
-**Lógicos**:
-Permite a combinação entre sentenças
+**Relacionais:** Permite o relacionamento entre dois ou mais valores, o resultado de uma operação é sempre uma booleana (verdadeiro ou falso).
 
-- Operador AND (E) -> &&: para o resultado ser verdadeiro, todas as combinações precisam ser verdadeiras
-    - true && true => true
-    - true && false => false
+|Operador|Significado|Exemplo|Resultado|
+|--------|-----------|-------|---------|
+|>|Maior que|18 > 18|False|
+|>=| Maior ou igual a|18 >= 18|True|
+|<|Menor que|10 < 20|True|
+|<=|Menor ou igual a|10 <= 5|False|
+|==|Comparação de valor|"10"==10|True|
+|===|Comparação estrita|"10"===10|False|
+|!=|Diferente|"10"!=10|False|
+|!==|Estritamente diferente|"10"!==10|True|
 
-- Operador OR (OU) -> ||: para o resultado ser verdadeiro, basta apenas uma condição ser verdadeira
-    -false || true => true
-    -false || false => false
+---
 
-- Operador NOT (NÃO) => !: Inverte a lógica da operação
-    - !true => false
-    - !false => true
+**Lógicos:** Permite a combinação entre sentenças.
 
---- 
-### Semana 3  Estrutura de dados (Condicionais e repetição)
+- **Operador AND (E) -> && :** Para o resultado ser verdadeiro, todas as combinações precisam ser verdadeiras.
+    - true && true -> true
+    - true && false -> false
 
-- **Conteúdo**:
- Estrutura 
- operdadores ternários ->`if`,`else`,`elseif` 
-substituto do switch/case -> `match` 
-loops -> `for`,`while`,`do-while`,`forach`
+- **Operador OR (OU) -> || :** para o resultado ser verdadeiro, basta apenas uma condição ser verdadeira.
+    - false || true -> true
+    - false || false -> false
 
-## Estruturas de controle de dados ajudam no processo de automatização em programas e sistemas
+- **Operador NOT (NÃO) -> ! :** Inverte a lógica da operação
+    - !true -> false
+    - !false -> true
 
-### Condiciomais (IF,ELSE,ELSEIF)
+---
+---
+## SEMANA 3 - Estrutura de Controle de Dados (Condicionais e Repetição)
 
-**Formas de uso**
+- **Conteúdo:** Estrutura `if`, `else` e `elseif`; Operadores ternários; `match` -> substituto do `switch/case`; Loops `for`, `while`, `do-while` e `foreach`.
 
-- uso do `if`apenas:
-Exemplo: aplicar desconto de 10% em compras acima de 100 reais.
+### Estrutura de Controle de Dados ajudam no Processo de Automatização em Programas e Sistemas
+
+#### ***Condicionais (IF, ELSE, ELSEIF)***
+
+**Formas de Uso:**
+
+- Uso do `if` apenas
+
+**Exemplo:** Aplicar desconto de 10% em compras acima de 100 reais.
 
 ```mermaid
 graph LR
 
 A[Comando] --> B{Condição} --> C[Ação]
 ```
----
+
+>PHP:
 ```php
 if($valorCompra > 100){
     $valorFinal = $valorCompra * 0.9;
 }
 ```
+---
 
 - Uso do `if` e do `else`
-Exemplo: Aplicar um desconto de 10% para compras acima de 100 reais e 5% paraa as demais compras
- 
- ```mermaid
- graph LR
- A[Comando] --> B{Condição}
- B --> |true| C[Ação 1]
- B --> |false| D[Ação 2]
- ``` 
- 
- ```php
- if ($valorCompra > 100){
-    $valorFinal = $valorCompra * 0.9;
- } else {
-    $valorFinaç = $valorCompra * 0.95;
- }
- ```
 
- - Uso `elseif` (if encadeado) -> estrutura usada para manipulação de dados em duas ou mais condicionais.
- Exemplo: compras acima de 200 reais tem 15% de desconto, compras de acima 100 reais tem 10% de desconto e demais compras tem 5% de desconto.
- 
- ```mermaid
+**Exemplo:** Aplicar um desconto de 10% para compras acima de 100 reais e 5% para as demais compras.
+
+```mermaid
+graph LR
+
+A[Comando] --> B{Condição}
+B --> |true| C[Ação 1]
+B --> |false| D[Ação 2]
+```
+
+>PHP:
+```php
+if($valorCompra > 100){
+    $valorFinal = $valorCompra * 0.9;
+} else{
+    $valorFinal = $valorCompra * 0.95;
+}
+```
+---
+
+- Uso do `elseif` (`if` encadeado) -> Estrutura usada para manipulação de dados em duas ou mais condicionais.
+
+**Exemplo:** Compras acima de 200 reais tem 15% de desconto, compras acima de 100 reais tem 10% de desconto e demais compras tem 5% de desconto.
+
+```mermaid
 graph LR
 
 A[Comando] --> B{Condição 1}
@@ -295,52 +298,63 @@ D --> |true| E[Ação 2]
 D --> |false| F[Ação 3]
 ```
 
+>PHP:
 ```php
-if ($valorcompra > 200) {
+if($valorCompra > 200){
     $valorFinal = $valorCompra * 0.85;
-} elseif ($valorCompra > 100) {
-    $valorfinal = $valorcompra * 0.9;
+} elseif ($valorCompra > 100){
+    $valorFinal = $valorCompra * 0.9;
 } else {
     $valorFinal = $valorCompra * 0.95;
 }
 ```
+> ***OBS:*** **Sempre** usar `elseif` para situações que precisam de mais de uma condição, ou seja, fazer encadeamento das condições.
 
-**OBSERVAÇÃO**: sempre usar `elseif` para situações que precisam de mais de uma condição, ou seja, fazer encadeamento das condições
+---
 
-- Uso *ERRADO* do if:
+- Uso ***ERRADO*** do `if`:
 
+>PHP:
 ```php
-if ($valorcompra > 200) {
+if ($valorCompra > 200){
     $valorFinal = $valorCompra * 0.85;
-} 
-if ($valorCompra > 100) {
-    $valorfinal = $valorcompra * 0.9;
+}
+if ($valorCompra > 100){
+    $valorFinal = $valorCompra * 0.9;
 } else {
     $valorFinal = $valorCompra * 0.95;
 }
 ```
-#### Operadores ternários:
-Um atalho para a estrutura condicional `if/else`, normalmente escrita em uma única linha de código.
+---
+### Operadores Ternários
 
-`condição? verdadeira: falsa`
+Atalho para a estrutura condicional `if/else`, normalmente escrito em uma única linha de código.
 
-Perfeito para descisões curtas de uma linha de comando
-Exemplo: Verficar se a pessoa é maior de idade (18)
- 
- ```php
- $idade = 18;
- // O formato é (condição) ? verdadeiro : falso;
- $status = ($idade>=18) ? "Maior de idade" : "Menor de idade";
- $staus2 =  ($idade>=60) ? "idoso" : ($idade>=18) ? "adulto" : "criança";
+> `condição ? verdadeiro : falso;`
 
- echo $status //
- ```
-#### Expressão condicional `match` (PHP 8) 
+-Perfeito para decisões curtas de uma linha de comando.
 
-No mercado atual de PHP, não se usa mais uma `Switch/Case` para chegar valores fixos usa-se o `match`. Ele compra um valor e retornam diretamente o resultado caso atenda a condição.
+**Exemplo:** Verificar se a pessoa é maior de idade (18).
+
+>PHP:
+```php
+$idade = 20;
+// O formato é (condição ? verdadeiro : falso;)
+
+$status = ($idade >= 18) ? "Maior de idade" : "Menor de idade";
+
+$status2 = ($idade > 60) ? "Idoso" : ($idade >= 18) ? "Adulto" : "Criança";
+
+echo $status;
+```
+---
+### Expressão Condicional `match` (PHP 8)
+
+No mercado atual de PHP, não se usa mais uma `Switch/Case` para chegar em valores fixos, usa-se o `match`. Ele compara um valor e retorna diretamente o resultado caso atenda a condição.
 
 ```mermaid
 graph TD
+
 A[Valor] --> B{Condicional}
 B --> C[Ação 1]
 B --> D[Ação 2]
@@ -348,177 +362,189 @@ B --> E[Ação 3]
 B --> F[Ação 4]
 B --> G[Ação ...]
 B --> H[Ação default]
-
 ```
-//Exemplo: Selecionar o dia da semana a partir de um Nº
-```php
-$diaSemanaNum = date ("W"); //pega o dia da semana em formato numerico
-
-$nomeDiaSemana = match ($diaSemanaNu) {
-    "0" => "Domingo"
-    "1" => "Segunda"
-    "2" => "Terça"
-    "3" => "Quarta"
-    "4" => "Quinta"
-    "5" => "Sexta"
-    "6" => "Sábado"
-    "default" => "Dia inválidp"
-};
- echo " Hoje é : $nomeDiaSemana";
- ```
 ---
-##### Laços de repetição
+**Exemplo:** Selecionar o dia da semana a partir de um número.
 
-Um laço de repetição faz com que um bloco de código rode várias vezes até que uma condição mande parar
+>PHP:
+```php
+$diaSemanaNumerico = date("W"); // Pega o dia da semana em formato numérico
 
-- O laço `while`(Enquanto) -> Ele verifica se a condição é verdadeira ANTES de entrar no laço. Ideal quando você não sabe exatamente quantas vezes vai rodar o laço
+$nomeDiaSemana = match($diaSemanaNumerico){
+    "0" -> "Domingo",
+    "1" -> "Segunda",
+    "2" -> "Terça",
+    "3" -> "Quarta",
+    "4" -> "Quinta",
+    "5" -> "Sexta",
+    "6" -> "Sábado",
+    "default" -> "Dia inválido"
+};
+
+echo "Hoje é: $nomeDiaSemana";
+```
+---
+### Laços de Repetição
+
+Um laço de repetição faz com que um bloco de código rode várias vezes até que uma condição mande parar.
+
+- **Laço `while` (enquanto):** Verifica se a condição é verdadeira ANTES de entrar no laço. Ideal quando não se sabe exatamente quantas vezes o laço vai rodar.
 
 ```mermaid
 graph LR
 
-    A[Início: contador = 0] --> B{Verdade?}
-    B -- Sim --> C[Repete]
-    C --> D[Executa código]
-    D --> B
-    B -- Não --> E[Fim do Laço]
-
+A[Início: Contador = 0] --> B{Verdade?}
+B -- Sim --> C[Repete]
+C --> D[Executa código]
+D --> B
+B -- Não --> E[Fim do laço]
 ```
-Exemplo de aplicação do while:
-
-Exemplo de aplicação do while: Jogo de adivinhação de um nº Secreto
+---
+> -> **Exemplo de Aplicação do `while`:** Jogo de adivinhação de um número secreto.
 ```php
-$tentativas = rand(1,10);
-$numeroEscolhido = 0;
+$numeroSecreto = rand(1,10);
 $tentativas = 0;
-while($numeroEscolhido != $numeroSecreto){
-echo "Tente Novamente"
-// vou escolher outro Nº para adivinhar
-numeroEscolhido = rand(1,10)
-tentativas++;
+$numeroEscolhido = 0;
+
+while(numeroEscolhido != numeroSecreto){
+    echo "Tente novamente!"
+    // Escolher outro número para adivinhar
+    numeroEscolhido = rand(1,10);
+    tentativas++;
 }
-echo "Acertou Miseravi! o nº secreto é $numeroEscolhido";
 
+echo "Acertou! O número secreto é $numeroEscolhido."
 ```
-
-- O laço `do-while`(faça enquanto)
-
-A diferença é que ele executa o bloco pelo menos uma vez, mesmo que a condição seja false desde o início, pois ele só pergunta no final. 
+---
+- **Laço `do-while` (faça-enquanto):** A diferença entre ambos, é que o `do-while` executa o bloco pelo menos uma vez, mesmo que a condição seja falsa desde o início, pois ele só pergunta no final.
 
 ```mermaid
-
 flowchart LR
-
     A([Início]) --> B[Ação]
     B --> C{Condição}
     C --true--> B
     C --false--> D([Fim])
 ```
-
-Exemplo: Jogo de Adivinhação de um Nº
+---
+> -> **Exemplo de Aplicação do `do-while`:** Jogo de adivinhação de um número secreto.
 ```php
-$tentativas = rand(1,10);
-do{
+$numeroSecreto = rand(1,10);
+
+ do{
     $numeroEscolhido = rand(1,10);
+
     if(numeroEscolhido == numeroSecreto){
-        echo "Parabéns, Acertou!!";
+        echo "Parabéns, acertou!!";
         break;
     }
 
-    echo "Tente Novamente!!";
-}while(numeroEscolhido != numeroSecreto);
+    echo "Tente novamente!";
+
+ } while(numeroEscolhido != numeroSecreto);
 ```
-##### O freio de emergências `break` e `continue`
-As vezes precisamos interferir no laço enquanto ele está rodando
--`break`-> **Para Tudo** Quebra o laço inteiro e o vai embora
-- `continue`-> **Pula a rodada** Ele ignora o código daquela rodada específica e pula logo para a próxima repetição.
+---
+### Freio de Emergência: `break` e `continue`
 
-Exemplo de aplicação de código: Sistema de controle de elelvador
+Às vezes precisamos interferir no laço enquanto ele está rodando.
 
+- `break` -> **Para tudo!** (Quebra o laço inteiro e vai embora).
+- `continue` -> **Pula a rodada!** (Ignora o código daquela rodada específica e pula logo para a próxima repetição).
+
+> -> **Exemplo de Aplicação do Código:** Sistema de Controle do Elevador.
 ```php
-for($andar = 1; $andar<=10; $andar++){
-    if($andar == 4) {
+for($andar = 1 ; $andar<=10; $andar++){
+    if($andar ==4){
         echo "Andar $andar está em obras. Passando direto!";
         continue;
     }
-    echo "Elevador psrou no andar $andar"
+
+    echo "Elevador parou no andar $andar"
 }
 ```
 ---
-##### Laço de repetição `for`
-Use o `for`quando você sabe quantas vezes precisa repetir uma ação ou quando precisa controle uma contador. Ele possui tr~es partes:
+### Laço de Repetição `for`
 
-- Inicialização,
-- Condição,
-- Incremento.
+Use o `for` quando você sabe quantas vezes precisa repetir uma ação ou quando precisa controlar um contador. Ele possui três partes:
 
-for(inicialização;condição; incremento){
+- Inicialização
+- Condição
+- Incremento
+
+> ***for (inicialização; condição; incremento) {
     ação
- }
- ```mermaid 
- flowchart LR
-    A[Início: i=0] --> B{i<10?>}
+}***
+
+```mermaid
+flowchart LR
+    A[Início: i = 0] --> B{i < 10?}
     B --true--> C[Ação]
-    C --> D[i++/i--]
+    C --> D[i++]
     D --> B
     B --false--> E[Fim]
 ```
-    
-    Exemplo: Exibir todos os meses do ano
-
- ```php
-for ($mes=1; $mes<=12>; $mes++){
+---
+> -> **Exemplo de Aplicação:** Exibir todos os meses do ano.
+```php
+for ($mes = 1; $mes <= 12; $mes++){
     echo "Mês $mes";
 }
 ```
-Nesse Exemplo, `$mes` começa em 1, o laço continua enquanto `$mes`for menor ou igual a 12 e, ao final de cada repetição, `$mes++`aumenta o contador em 1.
-##### Laço de repetição `foreach`
-Use o `foreach`quando precisar percorrer cada item de um *array*. Ele acessa os elementos diretamente, sem que você precise controlar o contador.
+Nesse exemplo, `$mes` começa em 1, o laço continua enquanto `$mes` for menor ou igual a 12 e, ao final de cada aplicação, `$mes++` aumenta o contador em 1.
 
-Exemplo: Imprimir todos os items de um vetor 
+---
+### Laço de Repetição `foreach`
 
+Use o `foreach` quando precisar percorrer cada item de um **array**. Ele acessa os elementos diretamente, sem que você precise controlar o contador.
+
+> -> **Exemplo de Aplicação:** Imprimir todos os itens de um vetor.
 ```php
-$frutas = ["maça","banana","uva","pera"];
-foreach($frutas as $frutas){
-    echo "Frutas: $frutas";
+$frutas = ["Maçã", "Banana", "Uva", "Pera"];
+
+foreach ($frutas as $fruta){
+    echo "Fruta: $fruta";
 }
 ```
-Outro Exemplo: Acessar a chave e o valor de cada item:
-
+> -> **Outro exemplo:** Acessar a chave e o valor de cada item.
 ```php
 $precos = [
-"Caderno" => 25.90,
-"Caneta" => 5.50,
-"Mochila" => 99.0
+    "Caderno" => 25.90,
+    "Caneta" => 5.50,
+    "Mochila" => 99.00
 ]; // vetor não ordenado chave => valor
 
-foreach($preços as $produtos => $preco){
+foreach ($precos as $produto => $preco){
     echo "$produto: R$ number_format($preco,2)";
 }
 ```
 ---
 ---
-### Semana 4 - Modularização com funções
+## SEMANA 4 - Modularização com Funções
+### O Princípio do DRY (`Don't Repeat Yourself`)
 
-#### Principio do DRY (`Don't Repeat) Yourself`)
-Se uma lógica foi escrita duas vezes ou mais dentro de um código, essa lógica deverá virar uma função.
+Se uma lógica foi escrita duas vezes ou mais dentro de um código, essa lógica deve virar uma função.
 
-#### Funções nativas do PHP
-O PHP tem milhares de funções prontas, essas funções são chamadas de nativas
+---
+### Funções Nativas do PHP
 
-**-O que é uma Função ?**
-Uma função é como uma máquina: você coloca uma "Matéria-prima" (Parâmetro), ela processa e devolve um produto final (Retorno)
+O PHP tem milhares de funções prontas, essas funções são chamadas de ***nativas***.
 
->Exemplo de função Nativa
+> **O que é uma função?**
 
+Uma função é como uma máquina: você coloca uma matéria-prima ***(parâmetro)***, ela processa e devolve um produto final ***(retorno)***.
+
+> -> **Exemplo de Função Nativa:**
 ```php
-$texto - "Senai Americana";
-//str_replace (ele abusca uma pedaço do texto e substitui por outro)
-$textoNovo = srt_replace("Americana", "São Paulo", $texto);
+$texto = "senai americana";
 
-//strtoupper
-echo strtoupper($textoNovo); // "SENAI SÃO PAULO"
+// str_replace
+$textoNovo = str_replace("americana","são paulo",$texto);
+
+// strtoupper
+echo strtoupper($textoNovo); // SENAI SÃO PAULO
 ```
-##### Principais funções Nativas (Mais Utilizadas)
+---
+### Principais Funções Nativas (mais utilizadas)
+
 As funções abaixo já fazem parte do PHP e podem ser chamadas diretamente no código. Observe os parâmetros que cada uma recebe e o tipo de informação que ela retorna.
 
 | Função | Categoria | O que faz | Como usar |
@@ -550,312 +576,314 @@ As funções abaixo já fazem parte do PHP e podem ser chamadas diretamente no c
 | `file_get_contents()` | Arquivos | Lê todo o conteúdo de um arquivo ou endereço. | `$conteudo = file_get_contents('dados.txt');` |
 | `file_put_contents()` | Arquivos | Grava conteúdo em um arquivo, criando-o se necessário. | `file_put_contents('log.txt', $mensagem);` |
 
-**Atenção:** algumas funções modificam o array original, como `sort()`, `array_push()` e `array_pop()`. Já outras retornam um novo valor, como `count()`, `explode()` e `str_replace()`. Em caso de dúvida, consulte a documentação oficial do PHP e verifique o retorno da função.
-
+- **Atenção:** algumas funções modificam o array original, como `sort()`, `array_push()` e `array_pop()`. Já outras retornam um novo valor, como `count()`, `explode()` e `str_replace()`. Em caso de dúvida, consulte a documentação oficial do PHP e verifique o retorno da função.
+---
 #### Documentação PHP
+> **Documentação PHP**:
+[Acesse a documentação oficial do PHP em português](https://www.php.net/manual/pt_BR/)
 
-[Acesse a documentação oficial do PHP em Português](https://www.php.net/manual/pt_BR)
+> Consulte também: [Referência de funções do PHP](https://www.php.net/manual/pt_BR/funcref.php), para pesquisar a sintaxe, os parâmetros e os valores por cada função.
+---
+### Funções Customizadas (criando suas próprias máquinas)
 
-Consulte também a [referência de funções do PHP](https://www.php.net/manual/pt_BR/funcref.php) para pesquisar a sintaxe, os parâmetros eos valores por cada função.
+Quando o PHP não tem a função desejada, nós a criamos!
 
-#### Funções Customizadas (Criando suas próprias máquinas)
+***Regra de Ouro:*** Uma função deve focar em `return` (retornar um valor), e não em imprimir (`echo`).
 
-Quando o PHP não tem a função que queremos, nós a criamos!
-**A regra de Ouro:** Uma função deve focar em `Return`(retornar um valor),e não imprimir (`echo`).
-
-Veja a diferença nesse exemplo:
+> -> **Veja a diferença nesse exemplo:**
 ```php
 function calcularTotal($preco, $quantidade){
-    //a função calcula e retora o resultado, mas não imprime nada
-    return $preco * $quantidade
+    // a função calcula e retorna o resultado, mas não imprime nada
+    return $preco * $quantidade;
 }
+
 $total = calcularTotal(25.00, 3);
-echo "Total de compra: R$ " . number_format($total,2,",",".");
-// Total da compra: 75,00
+echo "Total da compra: R$ " . number_format ($total, 2,",",".");
+// Total da compra: R$ 75,00
 ```
-A função `calcularTotal()`pode ser reutilizada em uma página, relatório ou teste. O `echo` aparece somente fora da função, no momento de apresentar o resultado ao usuário.
+> A função `calcularTotal()` pode ser utilizada em uma página, relatório ou teste. O `echo` aparece somente fora da função, no momento de apresentar o resultado ao usuário.
+---
+### Padrão de Uso Corporativo (PHP 8 Strict Types)
 
-##### Padrões de Uso Corporativo (PHP 8 Scrict Types)
-No mercado de trabalho, exigimos que a função avise exatamente o **TIPO** de dado que ela espera receber e o **TIPO** que ela vai devolver
+No mercado de trabalho, exigimos que a função avise exatamente o ***TIPO*** de dado que ela espera receber e o ***TIPO*** que ela vai devolver.
 
-Isso é chamado de **TIPAGEM DE FUNÇÕES**. Ao declarar os tipos, o código fica mais fácil de entender e o PHP consegue identificar alguns erros antes que eles causem problemas maiores no sistema.
+Isso é chamado de ***tipagem de funções***. Ao declarar os tipos, o código fica mais fácil de entender e o PHP consegue identificar alguns erros antes que eles causem problemas maiores no sistema.
 
-Os tipos mais usados:
-* `int`: número inteiro , `10` ou `1024`
-* `float`: número decimal ou ponto flutuante, `10.50`
-* `string`: texto, como `"Maria"`
-* `bool`: valor lógico, `true`ou `false`
-* `void`: identifica que a função não devolve nenhum valor
+Os tipos mais usados são:
+- `int`: número inteiro (ex: 10, 1024...);
+- `float`: número decimal ou ponto flutuante (ex: 10.50);
+- `string`: texto (ex: "Texto");
+- `bool`: valor lógico (true/false);
+- `void`: identifica que a função não devolve nenhum valor.
 
-O tipo escrito antes do nome de cada parâmetro e o tipo da função deve ser escrito após os parênteses, precedido por `;`, informando o que a função vai devolver.
+> O **tipo** deve ser escrito antes do nome de cada ***parâmetro*** e o **tipo da função** deve ser escrito após os ***parênteses***, precedido por `:`, informando o que a função vai devolver.
 
-Exemplo de uso de funções e parâmetros tipados:
-
+**-> Exemplo de uso de função e parâmetros tipados:**
 ```php
-function apresentarProdutos(string $nome, float $preco): string{
-    return "$nome custa $preco";
+function apresentarProduto(string $nome, float $preco): string{
+    return "$nome custa R$ $preco";
 }
 
-$mensagem = apresentarProdutos("Caderno", 25.90);
+$mensagem = apresentarProduto("Caderno", 25.90);
 echo $mensagem;
-// Caderno custa R$A 25.90
-``` 
-> **Resumo**: os tipos dos parâmetros documentam as entradas da função, o tipo após `:` documenta a saída da função.
+// Caderno custa R$ 25.90
+```
+> ***Resumo:*** os **tipos dos parâmetros** documentam as entradas da função, o **tipo** após `:` documenta a saída da função.
+---
+### O Tipo Mágico: `void`
 
-##### O tipo Mágico: `Void`
+Se uma função faz um trabalho interno e **não retorna NADA**, dizemos que o retorno dela é vazio (`void`).
 
-Se uma função faz um trabalho interno e *não retorna NADA*, dizemos que o retorno dela é "vázio" (`void`).
-
-Exemplo de função sem retorno
+**-> Exemplo de função sem retorno:**
 ```php
-function registroLog(string $mensagem): void {
-    //Apenas salva em um arquivo de texto, não devolver nenhuma variável
-    file_put_constents("erro.log", $mensagem);
+function registroLog(string $mensagem): void{
+    // apenas salvar em um arquivo de texto, não devolver nenhuma variável
+    file_put_contents("erro.log", $mensagem);
 }
 ```
-#### Escopo e Referência (O segredo da memória)
+---
+### Escopo e Referência (o segredo da memória)
 
-### O que é Escopo? (A regra de Las Vegas)
-*O que acontece dentro da função, fica dentro da função*. Uma varíavel criada fora não existe lá dentro, e uma criada lá dentro "morre" quando a função acaba
+**- O que é Escopo? ***(A Regra de Las Vegas)*****
 
-**Escopo** é o local do programa onde a variável pode ser armazenada/acessada. Em PHP, uma variável criada fora de uma função pertence ao **Escopo global** Uma variável criada dentro de uma função que pertence ao **Escopo Local**
+> *O que acontece dentro da função, fica dentro da função*. Uma variável criada fora não existe lá dentro, e uma criada lá dentro "morre" quando a função acaba.
 
-Exemplo de Escopo de variável:
+**Escopo** é o local do programa onde a variável pode ser armazenada/acessada. Em PHP, uma variável criada fora de uma função pertence ao **escopo global**. Uma variável criada dentro de uma função pertence ao **escopo local**.
 
-```php
-$nomeSistema = "CRM Senai"; //Variável Global
+**-> Exemplo de Escopo de Variável:**
+
+```php 
+$nomeSistema = "CRM Senai"; // variável global
 
 function criarMensagem():string{
-    $mensagem = "Bem-Vindo!"; // Variável Local
-    return $mensagem
-}
-echo $nomeSistema// Correto: esta no escopo global
-echo criarMensagem();// Correto: a função devolve sua variável local.
-echo $mensagem; // Incorreto: $mensagem só existe dentro da função, não é acessado fora
-```
-
-* Como enviar dados para uma função?
-> A forma mais segura e organizada para enivar os dados por **parâmetros**. Assim, a função não precisa acessar diretamentr variáveis globais:
-
-```php
-function saudar(string $nome): string{
-    return "Olá, $nome !";
+    $mensagem = "Bem-Vindo(a)!"; // variável local
+    return $mensagem;
 }
 
-$nomeCliente = "João";
-echo saudar ($nomeCliente); // Olá, João!
-``` 
-Nesse caso, `nomeCliente`continua no escopo global, mas seu valor é enviado para o parâmetro local `$nome`. A função recebe uma informação, processa e retorna o resultado
-
-Exemplo Incorreto:
-```php
-$nome = "João";
-    function saudar():string{
-        return "Olá, $nome";
-    }
+echo $nomeSistema; // correto: está no escopo global.
+echo criarMensagem(); // correto: a função devolve sua variável local.
+echo $mensagem; // incorreto: $mensagem só existe dentro da função, não é acessada fora.
 ```
-A função `saudar()`não conhece a variável global `$nome`
-
-> **Resumo:** varíaveis protegem os dados internos da função; parâmetros são um o caminho recomendado para evitar erros e enviar informações, e `return`é usado para devolver um resultao ao código que chamou a função.
-
 ---
-### Semana 5 -  Arrays e Manipulação Avançada de Dados
+**- Como enviar dados para uma função?**
 
-Um array (também é conhecido como vetor) é uma estrutura de dados usadas para armazenar vários valores em uma única variável.
-
-**Tipos de Arrays em PHP:**
-
-- Indexaods/Ordenado(Númerica); Usam números inteiros como índices (chaves), que começam em zero por padrão;
-- Associativos/ NãoOrdenados(string): Usam Chaves (String) Para identificar valores;
-- Multidimensionais: Contém um ou mais arrays dnetro de outro array.
-
-*Exemplos de arrays*
-
+A forma mais segura e organizada é enviar os dados por **parâmetros**. Assim, a função não precisa acessar diretamente variáveis globais:
 ```php
-//Array indexado
-$frutas = ["maça","banana","laranja"];
+function saudar(string $nome):string{
+    return "Olá, $nome!";
+}
 
-//Array associativo
+$nomeCliente = "Mayne";
+echo saudar($nomeCliente); // Olá, Mayne!
+```
+- Nesse caso, `$nomeCliente` continua no ***escopo global***, mas seu valor é enviado para o parâmetro local `$nome`. A função recebe uma informação, processa e retorna o resultado.
+
+**-> Exemplo Incorreto:**
+```php
+$nome = "Mayne";
+function saudar():string{
+    return "Olá, $nome!";
+}
+```
+- A função `saudar` não conhece a variável global `$nome`.
+---
+> ***Resumo:*** ***variáveis*** protegem os dados internos da função; ***parâmetros*** são o caminho recomendado para evitar erros e enviar informações; `return` é usado para devolver um resultado ao código que chamou a função.
+---
+---
+## SEMANA 5 - Arrays e Manipulação Avançada de Dados
+
+Um array (também conhecido como vetor) é uma estrutura de dados usados para armazenar vários valores em uma única variável.
+
+**Tipos de Arrays em PHP**
+- **Indexados/Ordenados (númerica):** Usam números inteiros como índices (chaves), que começam em 0 por padrão;
+- **Associativos/Não Ordenados (string):** Usam chaves (string) para identificar valores;
+- **Multidimensionais:** Contêm um ou mais arrays dentro de outro array.
+
+**Exemplos de Arrays:**
+```php
+//array indexado
+$frutas = ["maçã", "banana", "laranja"];
+
+//array associativo
 $capitais = [
-    "SP" =>"São Paulo"
-    "MG" =>"Belo Horizonte"
-    "ES" =>"Vitória"
+    "SP" => "São Paulo",
+    "RJ" => "Rio de Janeiro",
+    "MG" => "Belo Horizonte",
+    "ES" => "Vitória",
 ];
 
-//Acessando os dados dos arays
-echo $frutas[1]; //banana
+//acessando os dados dos arrays
+echo $frutas[1]; // banana
 echo $capitais["MG"]; // Belo Horizonte
 ```
->Obs: Em arrays associativos, nós trocamos os números do índice por nomes(chaves/Keys). Na declaração do vetor usamos "setinhas" (=>) que significa "recebe".
+>**OBS:** Em *arrays associativos*, trocamos os números do índice por nomes (chaves/keys). Na declaração do vetor, usamos setinha (=>), que significa "recebe".
+---
+### Arrays Multidimensionais (Banco de Dados na Memória)
 
-#### Arays Multidimensionais (Banco de Dados na memória)
+É aqui que o BackEnd começa de verdade!
+O *array multidimensional* é o formato como os bancos de dados e APIs respondem as solicitações feitas pelo BackEnd.
 
-É aqui que o "BackEnd" começa de verdade. O Array Multidimensional é o formato como os Bancos de Dados e APIs respondem as solicitações feitas pelo BackEnd.
-
-*Exemplo de Array Multidimensional:*
-
+**Exemplo de Array Multidimensional:**
 ```php
-$clintes = [
-    ["id" => 1, "nome" => "Ana", "Email" => "Ana@email.com", "Ativo" => true],
-    ["id" => 2, "nome" => "Bruno", "Email" => "bruno@gmail.com", "Ativo" => false],
-    ["id" => 1, "nome" => "Carlos", "Email" => "carlos@hotmail.com", "Ativo" => true],
+$clientes = [
+    ["id" => 1, "nome" => "Diogo", "email" => "diogotb@gmail.com", "ativo" => true],
+    ["id" => 2, "nome" => "Luiz", "email" => "luizplatini@hotmail.com", "ativo" => false],
+    ["id" => 3, "nome" => "Carlos", "email" => "carlosmorato@yahoo.com.br", "ativo" => true],
 ];
-//// Como acessar o email do carlos
-echo $clientes[2]["Email"]; // carlos@hptmail.com
-```
 
-#### O melhot amigo dos Arrays: `O Foreach`
-O laco de repetição especial para Arrays. O `foreach` percorre cada elemento de um Array
-
-**Exemplo de Aplicação** 
-
-```php
-foreach($clientes as $clienteAtual){
-    echo $clienteAtual ["nome"];
-    echo $clienteAtual["email"];
-}
-// Vai imprimir os nomes e o email de TODOS os clientes do Array.
-```
-#### Transformação de Arrays e Arrow Function
-
-Transformações de arrays são usadas para modificar ou filtrar informações de um array existentes
-
- - `array_filter`
- > Serve para buscar dados e devolver apenas os dados que passarem pelo filtro
- ```php
- $clientesAtivos = array_filter($clientes, fn ($c) => $c["ativo"]===true);
- //novo array, terá apenas os clientes que a chave ativo for igual a true
- ```
-
- -`array_map`
- >Serve para alterar TODOS os dados de um array de uma única vez
- ```php
- $produtos = [
-    ["id"=>1, "preco"=10.00, "setor"=>"jardim"],
-    ["id"=>2, "preco"=15.90, "setor"=>"ferramenta"],
-    ["id"=>3, "preco"=23.50, "setor"=>"jardim"],
- ]
- // ajustar o preço de todos os produtos em 10% de aumento
-
- $produtosAjustados = array_map(fn($p) => $p["preco"] = $p["preco"]*1.1, $produtos);
- ```
-
- >Obs: Para a função de filtragem, primeiro selecionamos o array e depois criamos a função de filtro. Para a função de mapeamente, primeiro criamos a função de transformação e depois aplicando no array
-
- #### Debugando um Array (Kit de Primeiro Socorros)
-
- - `print_r`
- > função usada para exibir informações sobre um array de forma legível em linguagem natural
-
- ```php
- echo print_r($frutas);
-
-//array
-(
-    [0] => "maça";
-    [1] => "banana";
-    [2] => "laranja";
-)
-```
-- `var_dump`
-Exibe com mais detalhes as informações de um array ou variáveis em PHP
-
-```php
-echo var_dump($frutas);
-// Mostrar tudo: tipo de dados, o tamanho e valor
+//como acessar o email do Carlos
+echo $clientes[2]["email"]; // carlosmorato@yahoo.com.br
 ```
 ---
+### O melhor amigo dos Arrays: `foreach`
 
-### Semana 6 - Processamento HTTP e Formulários WEB
+O laço de repetição especial para *arrays*!
+O `foreach` percorre cada elemento de um array.
 
-#### Anatomia de um Formulário HTML para BackEnd
+**Exemplo de Aplicação:**
+```php
+foreach($clientes as $clienteAtual){
+    echo $clienteAtual["nome"];
+    echo $clienteAtual["email"];
+}
+//vai imprimir nome e email de todos os clientes do array
+```
+---
+### Transformação de Arrays e Arrow Functions
 
-Antes do PHP processar qualquer informação, precisamos coletar informações no FrontEnd através de um `<form>`
+Transformações de arrays são usadas para modificar ou filtrar informações de um array existente
 
-**Exemplo de `<form>`HTML**
+- `array_filter`:
+Serve para buscar dados em um array e devolver apenas os dados que passarem pelo filtro.
+```php
+$clientesAtivos = array_filter($clientes, fn($c) => $c["Ativo"]===true);
+//novo array, terá apenas os clientes que a chave ativo for igual a true
+```
+- `array_map`:
+Serve para alterar todos os dados de um array de uma única vez.
+```php
+$produtos = [
+    ["id" => 1, "preço" = 10.00, "setor" => "jardim"],
+    ["id" => 2, "preço" = 15.90, "setor" => "ferramenta"],
+    ["id" => 3, "preço" = 23.50, "setor" => "jardim"],
+]
+//ajustar o preço de todos os produtos em 10% de aumento
+$produtosAjustados = array_map(fn($p) => $p["preço"] = $p["preço"] * 1.1, $produtos);
+```
+>**OBS:** Para a ***função de filtragem***, primeiro selecionamos o array e depois criamos a função de filtro. Para a ***função de mapeamento***, primeiro criamos a função de transformação e depois aplicamos no array!
+---
+### Debugando um Array (kit de primeiros socorros)
+
+- `print_r`:
+Função usada para exibir informações sobre um array de forma legível em linguagem natural.
+```php
+echo print_r ($frutas);
+//array
+(
+    [0] => "maçã",
+    [1] => "banana",
+    [2] => "laranja"
+)
+```
+- `var_dump`:
+Exibe com mais detalhes as informações de um array ou variável em PHP.
+```php
+echo var_dump ($frutas);
+//mostra tudo: tipo de dados, tamanho e valor
+```
+---
+---
+## SEMANA 6 - Formulários Web e Processamento HTTP
+
+### Anatomia de um Formulário HTML para BackEnd
+
+Antes do PHP processar qualquer informação, precisamos coletar informações no FrontEnd através de um `<form>`.
+
+**Exemplo de `<form>` em HTML:**
 
 ```html
-<form action = "processar.php" method="POST">
+<form action="processar.php" method="POST">
     <label>Nome Completo</label>
-    <input type: "text" id= "campoNome" name= "nomeUsuario" placeholder= "Digite seu nome">
-    <button type= "submit">Cadastrar</button>
+    <input type="text" id="campoNome" name="nomeUsuario" placeholder="Digite seu Nome">
+    <button type="submit">Cadastrar</button>
 </form>
 ```
+---
+### Os 3 Pilares de um Formulário
+1. **action="processa.php" -> O Destino:** Define qual script PHP no servidor recebrá os dados.
+2. **method="POST" -> O Transporte:** Define a via de protocolo HTTP que será usada (GET ou POST).
+3. **name="nomeUsuario" -> A Etiqueta do Dado:** É o nome da chave que o PHP usará no array associativo ($_POST["nomeUsuario"]).
 
-**Os pilares de um formulário**
-1. Action = "processa.php" -> O destino: define qual script PHP no servidor receberá os dados
-2. method= "POST" -> o Transporte: Define a via de protocolo HTTP que será usada (GET ou POST)
-3. name="nomeUsuario" -> A etiqueta do Dado: é um nome da chave que o PHP usará no array associativo ($_POST["nomeUsuario"])
+> **OBS:** Nunca confundir `id` com `name` no input, o PHP ignora o `id`!!
+---
+### O Protocolo HTTP
+Quando o usuário clica no botão `type="submit"`, o navegador compila todas as informações dos campos preenchidos e dispara um pacote de comunicação padronizado pelo **Protocolo HTTP *(Hypertext Transfer Protocol)***.
 
->OBS: Nunca confundir `id` com `name`no input, o PHP ignora o `id`.
+---
+### Os Formatos de Transferência
+- **Método GET**: Solicitar informações públicas e realizar buscas, mas altamente arriscado para dados privados.
+- **Método POST**: As informações viajam guardadas dentro do protocolo.
+---
+#### Testar o Uso dos Protocolos HTTP
+OK
 
-#### O protocolo HTTP
+---
+### GET vs. POST
 
-Quando o usuário clica no botão `type="submit"`, o navegador compila todas as informações dos campos preenchidos e dispara um pacote de comunicação padronizado pelo **Protocolo HTTP (HyperText Transfer Protocol).**
+1. **O Método GET (Consultas e Filtros)**
 
-**Os formatos de Transferência**
+O  **método `GET`** é utilizado quando a intenção do cliente é **buscar ou filtrar dados** sem alterar o estado do servidor. Os dados enviados via `GET` são anexados diretamente ao final da URL na forma de uma **Query String *(URL)***.
+> Os dados ficam abertos no parâmetro e salvos na URL!
 
->`Método GET`: solicitar informações públicas e realizar buscas, mas altamente arriscado para dados privados.
+2. **O Método POST (Envio de Cargas Úteis e Mutações)**
 
->`Método POST`: As informações viajam guardadas dentro do protocolo.
+O **método `POST`** é utilizado quando o formulário envia dados que devem ser processados para **criar ou modificar registros** no sistema (***ex:*** cadastro de usuários, finalizações de compra, upload de arquivos).
+> Ficam protegidas e se localizam dentro do `body` (**corpo da requisição** / ***ex:*** *json* -> arquivo que transporta dados)!
+---
+### SuperGlobais
 
-#### Testar o uso dos protocolos HTTP
+As variáveis ***SuperGlobais*** são arrays internos pré-definidos que estão sempre acessíveis em qualquer parte do script PHP, sem precisar declarar.
 
-#### GET vs POST
+- **$_GET:** Armazena dados passados pela URL via parâmetros de consulta (***Query String***);
+- **$_POST:** Recolhe dados enviados por formulários usando método ***HTTP POST***;
+- **$_SERVER:** Contém informações sobre o servidor, ambiente e caminhos de script.
 
-1. O Método GET (Consultas e filtros)
+> **Por que usar `??` para obter dados da SuperGlobal?**
 
-O método `GET`é uilizado quando a intenção do cliente é **buscar ou filtrar dados** sem alterar o estado do servidor. Os dados enviados via `GET` são anexados diretamente ao final da URL na forma de uma *QUERY STRING*.
+Usamos o ***Operador de Nulidade (Coalescência Nula)*** para verificar se o valor da variável não é `null` (nulo), se caso for, atribuímos um outro valor para evitar erros no script.
 
-2. O Método POST (Envio de Cargas úteis e mutações)
+> **Exemplo de Uso:**
 
-O método `POST`é utilizado quando o formulário envia dados que devem ser processados para **criar ou modificar** no sistema (Ex: Cadastro de usuários, finalizações de compra, upload de arquivos).
-
-#### As SuperGlobais
-
-As Variáveis SuperGlobais são arrays internos pré-definidos que estão sermptr acessíveis em qualquer parte do script php, sem precisar declarar.
-
-- **$_GET**: Armazena dados passados pela URL via parâmetros de consulta (query string);
-- **$_POST**: Recolhe dados enviados por fomulários usando método HTTP POST.
-- **$_SERVER**: Contém informações sobre o servidor, ambiente e caminhos de script
-
-*Por que usar `??` para obter dados da SuperGlobal*??
-
-Usamos o operador de Nulidade (Coalescência Nula) para verificar se o valor da variável não é `null`, se caso for `null` atribuimos um outro valor para evitar erros no script.
-
-**Exemplo de uso:**
-
-Na primeira vez que uma página é aberta, o formulário ainda não foi enviado. Portanto a chave pode não existir no array.
+Na primeira vez que uma página é aberta, o formulário ainda não foi enviado. Portanto, a chave pode não existir no array.
 
 ```php
-$nome =  $_POST["nome"];
-//escrevendo dessa forma, o código pode gerar um aviso de erro.
+$nome = $_POST["nome"];
+// escrevendo dessa forma, o código pode gerar um aviso de erro!
 
-// a forma mais correta de escrita é
+// a forma mais correta de escrita é:
 $nome = $_POST["nome"] ?? "";
-// se $_POST´["nome] não existir, use uma string vazia.
-```
+// se $_POST["nome"] não existir, use uma string vazia
 
->outra forma de verificar nulidade é usando `if` `else`
-```php
+// outra forma de verificar nulidade é usando if else
 if(isset($_POST["nome"])){
     $nome = $_POST["nome"];
-}   else{
-        $nome = "";
+} else {
+    $nome = "";
 }
 ```
 
->Observação: Use `HTMLSPECIALCHARS()` ao exibir valor em HTML 
-=> Converte caracteres especiaisa em entidades correspondentes em HTML, evitando que o código seja interpretadi erradamente pelo navegador. É usado principalmente na segurança WEB para evitar ataques `CROSS-SITES-SCRIPTING(XSS)`
+> - **OBS:** Use `htmlspecialchars()` ao exibir valor em HTML -> Converte caracteres especiais em entidades correspondentes em HTML, evitando que o código seja interpretado de maneira errada pelo navegador. É usado principalmente na segurança web para evitar ataques *Cross-Site-Scripting (XSS)*.
+---
+### Validação de dados *obrigatória* no BackEnd
 
-#### Validação de dados no BackEnd é Obrigatória.
+Muitos desenvolvedores iniciantes acreditam que colocar atributos `required`, `type="email"` ou `min="0"` na <tag> do HTML é suficiente para proteger o sistema. **Isso é uma ilusão!**
 
-Muitos desenvolvedores iniciantes acreditam que colocar atributos `required`, ou `type=email` ou `min=0`na <tag> do HTML é suficiente para proteger o sistmea. **Isso é uma ilusão!**. Sempre fazer as validações de dados no código BackEnd.
+-> Sempre fazer as validações de dados no código BackEnd!
 
+---
+### Funções Nativas Essenciais para Limpeza e Validação de Dados
 
-#### Funções nativas essenciais para limpeza e validação de dados.
-
-A validação no Back-End deve acontecer sempre antes do processamento de qualquer dado recebido pelo usuário. Abaixo está uma tabela resumida das funções nativas do PHP usadas com frequência para limpar, verificar e validar entradas de formulário.
+A validação no BackEnd deve acontecer sempre antes do processamento de qualquer dado recebido pelo usuário. Abaixo está uma tabela resumida das funções nativas do PHP usadas com frequência para limpar, verificar e validar entradas de formulário.
 
 | Função | Descrição | Quando usar | Exemplo simples |
 | :--- | :--- | :--- | :--- |
@@ -871,54 +899,52 @@ A validação no Back-End deve acontecer sempre antes do processamento de qualqu
 | `is_numeric($valor)` | Confirma se o valor é numérico | Validação de número | `if (is_numeric($_POST['quantidade'])) { ... }` |
 | `preg_match($padrao, $valor)` | Valida por expressão regular | CPF, CEP, telefone, senha forte | `preg_match('/^\d{5}-\d{3}$/', $cep)` |
 | `filter_input(INPUT_POST, 'campo', FILTER_SANITIZE_SPECIAL_CHARS)` | Captura e limpa dados da requisição | Ler entradas com segurança | `$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);` |
+---
+### Preservação de Estado em Formulários (*Sticky Form*)
 
+A técnica do ***Sticky Form*** consiste em imprimir de volta no atributo `value` do input os dados que o usuário acaba de digitar caso ocorra um erro de validação de dados.
 
-#### Preservação de Estado em Formulários (*Sticky form*)
-
-A técnica do **Sticky Form** consiste em imprimir de volta no atributo "value" do input os dados que o usuário acaba de digitar caso ocorra um erro de validação de dados.
-
-**Exemplo de uso:**
+> **Exemplo de Uso:**
 
 ```php
 <div class="campo">
-    <label for="nome">Nome Completo</label>
-    <input type="text" id="nome" name="nome" 
-        value="<?= htmlspecialchars"($dadosFormulario["nome"] ?? "") ?>
-        class="<?= isset($erro["nome"]) ? "input-erro" : "" ?>">
-    <?php if (isset($erro["nome"])): ?>
-        <span class="erro-texto"><?= $erro["nome"] ?></span>
+    <label for="nome">Nome completo</label>
+    <input type="text" id="nome" name="nome"
+        value="<?= htmlspecialchars($dadosFormulario['nome'] ?? '') ?>"
+        class="<?= isset($erro['nome']) ? 'input-erro' : '' ?>">
+    <?php if (isset($erro['nome'])): ?>
+        <span class="erro-texto"><?= $erro['nome'] ?></span>
     <?php endif; ?>
 </div>
 ```
+---
+---
+## SEMANA 7 - Segurança no BackEnd (Sanitização, Validação e Proteção contra XSS)
+
+### 1º Mandamento do Desenvolvedor BackEnd
+
+> ***Nunca confie no usuário:*** Toda entrada de dados vindo de fora do servidor é potencialmente maliciosa até que seja rigorosamente validado, sanitizado e codificado.
+
+Quando você disponibiliza um campo de texto em um site, qualquer pessoa conectada a internet pode digitar códigos maliciosos em vez de texto. Se o código BackEnd pega esse texto diretamente sem nenhum tratamento, a ordem de execução de códigos abrirá portas para invasões devastadoras no seu sistema.
 
 ---
+### A Anatomia de um Ataque: O que é Cross-Site Scripting (XSS)
 
-### Semana 7 - Segurança no BackEnd - Sanitização, Validação e preoteção contra XSS
+O XSS ocorre quando uma aplicação web inclui dados não confiáveis em uma página web sem a devida validação ou escape de caracteres. Isso permite que um atacante execute scripts maliciosos (geralmente em JavaScript) diretamente no navegador de outro usuário que visita o site.
 
-## 1º Mandamento do Desenvolvedor BackEnd 
+**Principais Modalidades de Ataque**
 
-> Nunca confie no Usuário: Toda entrada de dados vindo de fora do servidor é potencialmente maliciosa até que seja rigorosamente validada, sanitizada e codificada.
+1. **Roubo de Seção (Cookie Stealing):** O JavaScript injetado lê os cookies de autenticação da vítima (document.cookie) e os envia para o servidor do atacante, permitindo que ele faça login na conta da vítima sem precisar de senha.
 
+2. **Desconfiguração do Site (Defacement):** Altera o site visualmente, inserindo mensagens falsas, banners ofensivos ou formulários de login fraudulentos (phising interno).
 
-Quando você disponibiliza um campo de texto em um site, qualquer pessoa conectada a internet pode digitar códigos maliciosos em vez de texto. Se o código BackEnd pega esse texto diretamente sem nenhm tratamento, a ordem de execução de códigos abrirá porta para a invasão devastadoras do seu sistema.                
+3. **Redirecionamento Malicioso:** Força o navegador da vítima a abrir sites com vírus ou páginas clonadas de banco.
 
-### A anatomia de um ataque: O que é Cross-Site-Scripting (XSS)
+4. **Captura de Teclas (Keylogger):** Grava tudo o que a vítima digita enquanto a página estiver aberta.
+---
+**Os Vetores de Ataque Mais Frequentes**
 
-O xss ocorre quando uma aplicação WEB inclui dados não confiaveis em uma página WEB sem a devida validação ou escape de caracteres. Isso permite que um atacante execute scripts maliciosos (geralmente em JavaScript) diretamente no navegador de outro usuário que visitam o site. 
-
-**Como o ataque acontece**
-
-1. *Roubo de sessão(cookie stealing):* o JavaScript injetado le os cookies de autenticação de vítima (documente.cookie) e os envia para o servidor do atacante, permitindo que ele faça login na conta da vítima sem precisar de senha.
-
-2. *Desconfiguração do site (Defacement):* Alterar visualmente o site, inserindo mensagens falsas, banners ofensivos, ou formulários de login fraudulentos (phising interno).
-
-3. *Redirecionamento malicioso:* Força o navegador da vítima a abrir sites com vírus ou páginas clonadas de banco.
-
-4. *Captura de teclas(keylogger):* Grava tudo o que a vítima digita enquanto a página estiver aberta.
-
-**Os Vetores de Ataques Mais Frequentes:**
-
-Nem todo ataque XSS usa a tag óbvia `<script>`. Desenvolvedores que tentam bloquear XSS apenas "apagando a palavra script" são facilmente burlados por atacantes:
+Todo ataque XSS usa a tag óbvia `<script>`. Desenvolvedores que tentam bloquear XSS apenas "apagando a palavra script" são facilmente burlados por atacantes:
 
 | Vetor de Injeção | Como funciona o ataque? |
 | :--- | :--- |
@@ -927,44 +953,45 @@ Nem todo ataque XSS usa a tag óbvia `<script>`. Desenvolvedores que tentam bloq
 | `<svg onload="alert('XSS')">` | O navegador renderiza o elemento gráfico SVG e executa o evento `onload`. |
 | `<a href="javascript:alert('XSS')">Clique</a>` | O clique no link executa a pseudo-URL com JavaScript em vez de abrir um site. |
 | `"><script>alert('XSS')</script>` | Usado quando o dado é impresso dentro de um `<input value="...">`, quebrando o atributo e injetando a tag. |
-
-## **A tríade da defesa: validação, santiização e escapamento**
+---
+### A Tríade da Defesa: Validação, Sanitização e Escapamento
 
 ```mermaid
+flowchart  LR
 
-flowchart LR
-    A[Entrada de dados GET/POST]
-    B[1. Validação]
+    A[Entrada de Dados GET/POST] 
+    B{1. Validação}
     C[2. Sanitização]
     D[Processamento]
     E[3. Escapamento]
     F[HTML]
 
     A --> B
-    B -- (inválido)-Rejeita e devolve o erro --> A
-    B -- (Válido) --> C
-    C -- (Limpo e Formato) --> D
-    D -- Converte caracteres antes do HTML --> E
+    B -- Inválido - Rejeita e devolve o erro --> A
+    B -- Válido --> C
+    C -- Limpo e Formatado --> D
+    D --> E
     E -- Converte caracteres antes do HTML --> F
 ```
-1. **Validação**: verifica se o dado recebido atende aos requisitos exatos do sistema (tipo,tamanho, formato)
+---
+1. **Validação:** Verifica se o dado recebido atende aos requisitos exatos do sistema (tipo, tamanho, formato).
 
-Ex: Verificar se oo email possui `@` e dominio válido (`filter_var($email, FILTER_VALIDATE_EMAIL)`)
+- **Exemplo:** Verificar se o email possui `@` e domínio válido (`filter_var($email, FILTER_VALIDATE_EMAIL)`).
+---
+2. **Sanitização:** Transforma o dado para adequá-lo ao formato desejado, removendo caracteres indesejados.
 
-2. **Sanitização**: Transforma o dado para adequa-lo ao formato desejado, removendo caracteres indesejados.
+- **Exemplo:** Remover espaços no início e fim (`trim($nome)`).
+---
+3. **Escapamento/Codificação de Saída:** É o ato de converter caracteres especiais de linguagem HTML em suas respectivas ***Entidades HTML*** no momento exato em que eles são impressos na tela.
 
-Ex: Remover espaços no ínicio e fim (`trim($nome)`)
+- **Exemplo:** Usar `htmlspecialchars()`.
+---
+### A Ferramenta Principal: `htmlspecialchars()`
 
-3. **Escapamento/Codificação de Saída**: é o ato de converter caracteres especiais de linguagem HTML em suas respectivas **Entidades HTML** no momento exato em que eles são impressos na tela.
+A função `htmlspecialchars()` é o principal mecanismo do PHP para neutralizar XSS na camada de apresentação.
 
-Ex: usar `htmlspecialchars()`
-
-
-#### **A Ferramenta PRincipal: `htmlspecialchars()`**
-
-A função `htmlspecialchars()` é o principal mecanismo do PHP para neutralizar XSS na camda de apresentação
-
-**Como a conversão de entidades funciona?**
+---
+**Como a conversão de entidades funciona:**
 
 | Caractere Original | Entidade HTML Gerada | Efeito no Navegador |
 | :---: | :---: | :--- |
@@ -973,35 +1000,36 @@ A função `htmlspecialchars()` é o principal mecanismo do PHP para neutralizar
 | `"` | `&quot;` (*Quotation Mark*) | Não quebra atributos HTML `<input value="...">`. |
 | `'` | `&#039;` ou `&apos;` | Protege strings envoltas em aspas simples. |
 | `&` | `&amp;` (*Ampersand*) | Evita interpretação incorreta de entidades. |
-
-**A sintaxe no PHP**
+---
+**A Sintaxe no PHP**
 
 ```php
 string htmlspecialchars(
-    string $string
-    int $flags =  ENT_QUOTES | ENT_SUBSTITUE| ENT_HTML5,
-    ?string $enconding = "UTF-8"
-)
+    string $string,
+    int $flags = ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML5,
+    ?string $encoding = "UTF-8"
+);
 ```
-- **`ENT_QUOTES`**: converte tanto aspas duplas quanto aspas simples. Essencia para saídas em atributos HTML
-- **`ENT_SUBSTITUTE`**: substitui sequências de bytes iválidos por caracteres de substuição Unicode em vez de retornar uma string vazia.
-- **`ENT_HTML5`**: aplicaa tabela de entidades compatíveis com a especificação HTML5
-- **`UTF-8`**: garante que caracteres da lingua portugues (como "ç", "ã" e "é") sejam preservados sem corrupção.
 
-**A função Helper de escapamento**
+- `ENT_QUOTES`: Converte tanto aspas duplas (""), quanto aspas simples (''). Essencial para saídas em atributos HTML.
+- `ENT_SUBSTITUTE`: Substitui sequências de bytes inválidos por caracteres de substituição Unicode em vez de retornar uma string vazia.
+- `ENT_HTML5`: Aplica a tabela de entidades compatíveis com a especificação HTML5.
+- `UTF-8`: Garante que caracteres da língua portuguesa (como "ç", "ã", "é") sejam preservados sem corrupção.
+---
+**A Função Helper de Escapamento**
 
-Para não precisar digitar essa linha extensa em todas as partes de saída de texto para o HTML, os desenvolvedores profissionais criam uma função auxiliar curta:
+Para não precisar digitar essa linha extensa em todas as partes de saída de texto para HTML, os desenvolvedores profissionais criam uma função auxiliar curta:
 
 ```php
-function e(string $texto):string {
+function e(string $texto): string {
     return htmlspecialchars($texto, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML5, "UTF-8");
 }
 
 <p>Comentário: <?= e($comentarioUsuario) ?></p>
-<input type="text" name="nome" value="<? e($nomeUsuario) ?>"/>
+<input type="text" name="nome" value="<?= e($nomeUsuario) ?>">
 ```
-
-#### **Validação e Sanitização com `filter_var()`**
+---
+### Validação e Sanitização com `filter_var`
 
 O PHP possui a biblioteca de filtros nativos `filter_var()`. Observe os filtros mais importantes do ecossistema corporativo:
 
@@ -1039,67 +1067,80 @@ if (filter_var($ip, FILTER_VALIDATE_IP) !== false) {
     // IP válido
 }
 ```
-
 ---
+---
+## SEMANA 8 - Persistência de Dados com Banco de Dados Relacionais (PostgreSQL) e Conexão PDO
 
-### Semana 8 - Persistência de dados com banco de dados relacionais (PosrgresSQL) e conexão PDO
+**Temas:**
+- Camada de acesso a dados
+- DriverPDO (PHP Data Objects)
+- Driver `pdo_pgsql`
+- Padrão Singleton
+- Isolamento de Credenciais (`.env` / `.ini`)
+- Tratamento de Exceções (`PDOException`)
+---
+### 1. Da *memória volátil* ao *banco de dados*
 
-**Tema:** Camada de acesso aos dados, DiverPDO (PHP Data Objects), Driver `pdo_psql`padrão singleton, Isolamento de credenciais (`.env.ini`) e tratamento de exceções (`PDOException`)
+Em sistemas corporativos de grande porte, arquivos planos (`.txt` / `.json`) não oferecem a segurança, integridade, concorrência e velocidade necessárias para o armazenamento de dados. Então é aqui que o ***BackEnd*** encontra o **Banco de Dados Relacional**.
 
-#### **1. Da mamória volátil ao banco de dados**
-
-Em sistema corporativos de grande porte, arquivos panos (`.txt .json`) não oferecem a segurança, integridade, concorrencia e velocidade necessária para armazenamento de dados. Então é aqui o **BackEnd** encontra o **Banco de dados relacional**.
-
-Banco de dados relacional permite:
-- Conecctar a lógica de programação server-side ao sistema de gerenciamento de banco de dados (SGBD).
-- Garantindo persistência definitia e segura dos registros.
-- Aplicando integridade referencial, constrains, consultas otimizadas e produtividade ACID aprendidas na disciplina de BCD.
-
->OBS: ACID
-
-* Atomicidade, assegura que cada transação seja única.
-* Consistência, respeita todas as regras, restrições e chaves definidas, garantindo a validade de transação.
-* Isolamento, transações são realizadas de forma idenpendente.
-* Durabilidade, transações são confirmadas, garantindo persistência permanente.
-
+O **Banco de Dados Relacional** permite:
+- Conectar a lógica de programação server-side ao Sistema de Gerenciamento de Banco de Dados (SGBD).
+- Garantir persistência definitiva e segura dos registros.
+- Aplicar integridade referencial, constraints, consultas otimizadas e produtividade ACID aprendidas na disciplina de Banco de Dados.
+> **OBS:**
+***ACID***
+> - **Atomicidade:** assegura que cada transação seja única.
+> - **Consistência:** respeita todas as regras, restrições e chaves definidas, garantindo a validade da transação.
+> - **Isolamento:** transações são realizadas de forma independente.
+> - **Durabilidade:** transações são confirmadas, garantindo persistência permanente.
+---
 ```mermaid
 flowchart LR
-    navegador[Navegador Web - Clientw/Font]
-    servidor[Servidor PHP - BackEnd - Regras de négocio]
-    banco[SGBD - Base de Dados Persistentes]
+    Navegador[Navegador Web - Cliente/FrontEnd]
+    Servidor[Servidor PHP - BackEnd - Regras de Negócio]
+    Banco[SGBD - Base de Dados Persistentes]
 
-    Navegador --> |"Requisição HTTP"| servidor
-    servidor --> |"Query - Driver PDo"| banco
-    banco --> |"Consult - Driver PDO" | servidor
-    servidor --> |"Resposta HTML/JSON"| navegador
-    
+    Navegador --> |"Requisição HTTP"| Servidor
+    Servidor --> |"Query - Driver PDO"| Banco
+    Banco --> |"Consult - Driver PDO"| Servidor
+    Servidor --> |"Resposta HTML/JSON"| Navegador
 ```
+---
+### 2. O que é o *PDO (PHP Data Object)*?
 
-#### **2. O queé o PDO (PHP Data Object)**
+O **PDO** é uma camada de abstração de acesso a dados integrada nativamente ao PHP. Ele fornece uma interface uniforme e orientada a objetos para se comunicar com múltiplos sistemas de banco de dados *(PostgreSQL, MySQL, SQLite, OracleSQL, SQLServer)*.
 
-o **PDO** é uma camada de abstração de acesso a dadps integrada nativamente ao PHP. Ele fornece uma interface uniforme e orientad a a objetos para se comunicar com múltiplos sistemas de banco de dados (PostgredSL, mySQL, SQLite, OracçeSQL, SQLServer).
-
-``` mermaid
+```mermaid
 flowchart TB
-aplicacao[aplicação PGP - Controllers, Service, Models]
-pdo[Interface PDO - métodos: query, prepare, execute]
+    Aplicacao[Aplicação PHP - Controllers, Services, Models]
+    PDO[Interface PDO - Métodos: query, prepare, execute]
 
-driverpgsql[Driver PDO_PGSQL]
+    Driverpgsql[Driver PDO_PGSQL]
+    Drivermysql[Driver PDO_MYSQL]
+    Driveroracle[Driver PDO_OCI]
 
-postgres[Banco PostgresSQL]
+    Postgres[Banco PostgreSQL]
+    Mysql[Banco MySQL]
+    Oracle[Banco Oracle]
 
-aplicacao --> pdo
-pdo --> driverpgsql
-driverpgsql --> postgres
-``` 
+    Aplicacao --> PDO
+    PDO --> Driverpgsql
+    PDO --> Drivermysql
+    PDO --> Driveroracle
+    Driverpgsql --> Postgres
+    Drivermysql --> Mysql
+    Driveroracle --> Oracle
+```
+---
+### 3. Vantagens do uso do *PDO*
 
-#### **3. Vantagens do uso do PDO**
+- **Portabilidade de Código:** Os métodos de conexão, consulta e transações são idênticos, independente do banco utilizado. Se o cliente migrar do banco *Postgres* para outro SGBD(*MySQL*), o programador apenas altera a string DSN de conexão, preservando toda a lógica de acesso já utilizada ou criada.
+- **Suporte Nativo a Prepared Statement:** O *PDO* foi projetado para trabalhar com consultas nativas, oferencendo defesa contra ataques de ***SQL_Injection***.
+- **Tratamento Orientado a Objetos com Exception:** Em vez de retornar códigos de erros, o *PDO* lança uma instância da classe especializada `PDOException`.
+---
+#### **A Sintaxe da Conexão *PDO*: ***DSN (Data Source Name)*****
 
-- **Portabilidade de código**: os métodos de conexão, consulta e transações são identicos, independente do banco utilizado. Se o cliente migrar de banco Postgres  para outroo SGBD (MySQL), o programador apenas altera a string DSN de conexão, preservando toda a alógica de acesso já utilizado ou criada.
-
-- **Suporte Nativo a prepared statement**: O PDO foi projetado para trabalhar com consultas nativas, oferecendo defesa contra ataques de **SQL_Injections**
-
-- **Tratamento Orientado a Objetos com Exceptions**: Em vez de retornar códigos de erros, o PDO lnaça uma instância de classe especilizada `PDOException`
+Para que o *PDO* saiba onde o banco está localizado e em qual porta abrir, utilizamos a string padronizada ***DSN***.
 
 ```text
 pgsql:host=127.0.0.1;port=5432;dbname=seu_banco
@@ -1109,86 +1150,106 @@ pgsql:host=127.0.0.1;port=5432;dbname=seu_banco
   |          └─ Endereço IP ou hostname do servidor
   └─ Identificador do driver do SGBD(pgsql) - PostgreSQL
 ```
+---
+### 4. Configuração do *PDO*
 
-#### **4. Configuração do PDO**
+Ao instanciar um objeto PDO, devemos configurar quatro flags essenciais que determinam como o driver se comportará frente a erros e consultas ao SGBD.
 
 ```php
 $opcoes = [
     //1. flag: Lança exceções imediatamente quando ocorrer qualquer erro SQL
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 
-    //2. Retorna registros apenas com nomes das colunas (Eliminar duplicidade numérica)
+    //2. Retorna registros apenas com nomes das colunas (eliminar duplicidade numérica)
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 
-    //3. Desatica emulação e utiliza prepared statements nativos 
+    //3. Desativa a emulação e utiliza prepared statements nativos do SGBD
     PDO:: ATTR_EMULATE_PREPARES => false,
 
-    //4. Limita a 5 segundos para tentar a conexão com o servidor do BD
+    //4. Limita um tempo de 5 segundos para tentar a conexão com o servidor do BD
     PDO:: ATTR_TIMEOUT => 5
 ];
 ```
+---
+#### **Detalhamento das Flags:**
 
+- **PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION** : por padrão, o PDO pode falhar silenciosamente e retornar apenas `false`. Ao Ativar o `ERR_MODE`, ele força o PHP a disparar uma `PDOException`, permitindo que o nosso código interprete qualquer erro em um bloco `try-catch`.
 
-Ao instanciar um objeto PDO, devemps configurar quarto flags essenciais que determinam como o driver comportará frente a erro consultas ao SGBD.
+- **PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC** : por padrão, o método `fetch()` retrona um array duplicado contendo índices numéricos `[0,1]` e associativos `["id","código_maquina"]`. Definir `FETCH_ASSOC` reduz o consumo de memória RAM pela metade e entrega coleções limpas.
 
-**Detalhamento das Flags**:
-- PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION : por padrão o PDO pode falhar silenciosamente e retorna apenas `false`. Ao Ativar o ERR_MODE força o PHP a dispara uma `PDOException`, permitindo que o nosso código interprete qualquer erro em um bloco `try-catch`.
-- PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC : por padrão o métos `fetch()`retrona um array duplicado ontendo índices numéricos`[0,1]`e associativos`["id","código_maquina"]`. Definir `FETCH_ASSOC`reduz o consumo de memória RAM pela metade e entrega coleções limpas.
-- PDO::ATTREMULATE_PREPARES => false : Garante que o PHP envie a consulta e os parêmtros separados diretamente para o planejador do BD processar, blindando e aplicação contra ataques sofisticados de `SQL_injection`
-
-
-#### **5. Proteção de Credenciais**
+- **PDO::ATTR_EMULATE_PREPARES => false** : Garante que o PHP envie a consulta e os parâmetros separados diretamente para o planejador do BD processar, blindando a aplicação contra ataques sofisticados de `SQL_injection`.
+---
+### 5. Proteção de Credenciais
 
 Um dos erros mais graves cometidos por desenvolvedores iniciantes é escrever dados de conexão diretamente dentro do código:
 
 ```php
-//péssima prática de código
-$pdo = new PDO("pgsql:host=localhost; dbname="producao"; "postgres"; "senha12345");
-//observer que as credenciasi estão expostas nos código
+// péssima prática de código
+$pdo = new PDO ("pgsql:host=localhost; dbname="producao"; "postgres"; "senha12345"");
+// observa-se que as credenciais estão expostas no código
 ```
+Se esse arquivo for versionado e enviado para o GitHub:
+1. Suas senhas de produção ficam públicas.
+2. Robôs maliciosos varrem repositórios à procura de credenciais expostas, para invadir bancos de dados e sequestrar informações *(ataque de Ransomware)*.
+3. A empresa é penalizada por violações da *LGPD (Lei Geral de Proteção de Dados)*.
+---
+#### **Abordagem segura: usando arquivos de configuração isolada (`.env` / `.ini`)**
 
-Se esse arquivo for versionado e enviado para GitHub:
-1. Suas senhas de produção ficam públicas
-2. Robôs maliciosos varrem repositórios à procura de credenciais expostas, para invadir banco de dados e sequestrar informações(ataque de Ransoware)
-3. A empresa é penalizada por violações da **LGPD(LEi Geral de Proteção de Dados)**
+Isolamos as credenciais em um arquivo externo protegido que ***nunca entra no Git***.
 
-**A Abordagem Segura: Usando Arquivos de Configuração Isolada (`.ini` `.env`)**
+```ini
+; config/database.ini
+[database]
+db_driver = pgsql
+db_host = 127.0.0.1
+db_port = 5432
+db_name = producao
+db_user = postgres
+db_pass = senha12345
+```
+> Adicionamos o arquivo isolado ao `.gitignore`
 
-Isolamos as credenciais em um arquivo externo protegido que **nunca entra no Git**
+```text
+config/database.ini
+.env
+logs/*.log
+```
+---
+### 6. Padrão Singleton de Conexão
+
+Imagina uma aplicação web com 500 usuários acessando simultaneamente. Se cada script, função ou método executar `new PDO()`, ou seja, abrir uma nova conexão, sempre que precisar consultar o banco de dados, teremos milhares de conexão de redes abertas desnecessariamente.
+
+No **SGBD *(PostgreSQL)***, cada conexão aberta cria um processo no sistema operacional dedicado. Abrir conexões repetidas esgota rapidamente o limite configurado (`max_connection`) do BD, gerando um erro:
+> `Fatal Error: Sorry, too many clients already`
+---
+#### **Como o Singleton resolve isso**
+
+O padrão ***Singleton*** garante que **apenas uma única instância de conexão PDO exista por requisição**, reutilizando a conexão existente em qualquer ponto do sistema.
 
 ---
-#### **6. Padrão Singleton de Conexão**
+#### **Configurações do Singleton**
 
-Imagian uma aplicação web com 500 usuários acessando simultaneamente. Se cada script, função ou método executar `new PDO()`, ou seja, abrir uma nova conexão, sempre que precisar consultar o banco de dados, teremos milhares de conexão de redes abertas desnecessariamente.
+1. **Construtores Privados (`private function_constructor`):** Impede que outros arquivos instanciem uma nova conexão.
+2. **Propriedades (ou Atributos) Estáticas Privadas (`private static ?PDO $instancia = null`):** Armazena a conexão aberta na classe.
+3. **Métodos de Acesso Estático Públicos (`public static function obterConexao():PDO`):** A conexão é criada pelo método, garantindo acesso a conexão, mas não acesso aos atributos da conexão. Se caso já existir uma conexão, apenas devolve a conexão existente para o operador, sem a necessidade de criar uma nova.
+4. **Bloqueio de Clonagem e Desserialização (`_clone` e `_wakeup`):** Garante que ninguém consiga duplicar o objeto da conexão.
+---
+### 7. Tratamento de Falhas com `PDOException`
 
-No SGBD(PostgreSQL), cada conexão aberta cria um processo no sistema operacional dedicado. Abrir conexões repetidas esgotam rapidamente o limite configurado (`max_connection`) do BD gerando um erro:
-`Fatal Error: sorrym, too many clients already`
+Quando uma tentativa de conexão falha (servidor desligado, senha incorreta, usuário incorreto, porta inacessível...), o PDO lança uma exceção (`PDOException`). Então, devemos tratar essas falhas.
 
-**Como o Singleton resolve isso**
+---
+#### **Práticas recomendadas de segurança (AppSec):**
 
-O padrão **Singleton** garante que **apenas uma única insrancia de conexão PDO exista por requisição**, reutilizando a conexão existente em qualquer ponto do sistema.
+- **Para o Usuário:** Exibir mensagens amigáveis e genéricas (*"Não foi possível processar sua solicitação. Tente novamente mais tarde"*).
+- **Para a Equipe de Desenvolvimento:** Gravar os detalhes técnicos da falha com *timestamp* (carimbo de data e hora) em um arquivo de log seguro (`log/database.log`);
+---
+---
+## SEMANA 9 - CRUD Completo com Prepared Statements e Proteção Contra SQL Injection
 
-**As Configurações do Singleton**
-1. **Construtores Privados** (`private function _constructor`): Impede que outros arquivos instanciem uma nova conexão
-2. **Propriedade/Atributos Estáticas Privadas**: (`private static ?PDO $instancia = null`): Aramzena a Conexão aberta na Classe
-3. **Métodos de acesso Estáticos Públicos**: (`public static function obterConexao():PDO`): A Conexão é criada pelo método, garantindo acesso a conexão, mas não acesso aos atributos da conexão, se caso já existir uma conexão, apenas devolve a conexão existente para o operador, sem a necessidade de crir uma nova.
-4. **Bloqueio de Clonagem e Desserialização**: (`_clone` e `_wakeup`): Garantir que ninguém consiga duplicar o objeto da conexão.
+- **Tema:** Operações CRUD, Vulnerabilidade SQL Injection (OWASP Top 10), Consultas Preparadas com PDO (`prepare`, `bindValue`, `execute`), Marcadores Nomeados e Padrão de Arquiteutra DAO (DATA ACCESS OBJECT).
 
-#### **7. Tratamento de Falhas com `PDOException`**
-
-Quando uma tentativa de conexão falha(servidor desligado, senha incorreta, porta inacessível ...), o PDO lança uma Exceção (`PDOException`). Então, devemos tratar essa falhas. 
-
-**Práticas recomendadas de segurança** (AppSec):
-
-* **Para o Usuário**: Exibir mensagens amigáveis e genéricas: *Não é possível processar sua solicitação.*
-* * **Para a Equipe de Desenvolvimento**: Gravar os detalhes técnicos da falha com timestamp(carimbo de data e hora) em um arquivo de log seguro (`log/database.log`);
-
-----
-### Semana 9 - CRUD completo com Prepared Statements e Proteção contra SQL Injection 
-
-**Tema: Operações CRUD, vulnerabilidade SQL Injection (OWASP top 10), consultas preparadas com PDO (`prepare`,`bindValue`,`execute`), Marcadores nomeados e padrão de arquitetura DAO (DATA ACCESS OBJECT)
-
-Em qualquer organização, o objetivo central de um sistema de software é manipular informações com segurança, velocidade e consistência. Essa manipulação se resume a quatro operações fundamentais que todo desenvolvedor BackEnd deve dominar com perfeição, essas operações são conhecidas pelo acrônimo **CRUD**
+Em qualquer organização, o objetivo central de um sistema de software é manipular informações com segurança, velocidade e consistência. Essa manipulação se resume a 4 operações fundamentais que todo desenvolvedor BackEnd deve dominar com perfeição, essas operações são conhecidas pelo acrônimo **CRUD**.
 
 ```mermaid
 flowchart TB
@@ -1205,20 +1266,21 @@ flowchart TB
     style D fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#7f1d1d
 ```
 
-Na semana 08, aprendemos a como conectar usando a extensão PDO e utilizando o padrão sigleton. Agora, vamos dar vida a essa conexão: Aprenderemos a inserir novos registros, consultar com filtros diâmicos e remover e atualizar dados com segurança.
+Na Semana 08, aprendemos a como conectar usando a extensão *PDO* e utilizando o padrão *Singleton*. Agora, vamos dar vida a essa conexão: aprenderemos a inserir novos registros, consultar com filtros dinâmicos e remover e atualizar dados com segurança.
 
-### **A maior ameaça da história da WEB: SQL Injection (`SQLi`)**
+---
+### A Maior Ameaça da História da Web: SQL Injection (`SQLi`)
 
-Antes de escrever a primeira query de manipulação, precisamos compreender o periodo que cerca o acesso o banco de dados.
+Antes de escrevermos a primeira query de manipulação, precisamos compreender o perigo que cerca o acesso a bancos de dados: A vulnerabilidade **SQL Injection** que ocupa o topo das listas mais críticas de cibersegurança.
 
-A vulnerabilidade **SQL Injection** que ocupa o topo das listas mais críticas de cibersegurança. Ela Ocorre quando um desenvolvedor comete um erro gravíssimo de **concatenar entradas fornecidas pelo usuário diretamente na instrução SQL**
+Ela ocorre quando um desenvolvedor comete um erro gravíssimo de **concatenar entradas fornecidas pelo usuário diretamente na instrução SQL**
 
-**Exemplo de Código Proibido (Concatenação de String)**
+> **Exemplo de código proibido (Concatenação de String)**
 
 Imagina um sistema que valida o login de um operador da seguinte forma:
 
 ```php
-//Codigo Vulnerável e Perigoso - NUNCA FAÇA ISSO!
+// código vulnerável e perigoso - NUNCA FAÇA ISSO!
 $usuario = $_POST["usuario"];
 $senha = $_POST["senha"];
 // o invasor digita no campo usuário: admin' --
@@ -1226,27 +1288,40 @@ $senha = $_POST["senha"];
 $sql = "SELECT * FROM usuarios WHERE login = '".$usuario . "'AND senha= '" .$senha ."'";
 $resultado = $pdo->query($sql)
 ```
-1. A aspa digita pelo atacante fecha a string do login antecipadamente
-2. O operador `--`no Banco de Dados indica o **início de um comentário** 
-3. O restante da query (a validação de senha) é ignorada pelo morto de busca do banco
-4. **Resultado:** o invasor faz login instantaneamente na conta do administrador sem precisar saber a senha. 
 
-**3 Cenários Mais utilizados de SQL Injection**
+> **O que acontece quando o atacante digita: `admin' --`?**
+
+A string final apontada pelo PHP envia a seguinte mensagem para o banco:
+
+```sql
+SELECT * FROM usuarios WHERE login = 'admin' --' AND senha= '...'
+```
+
+1. A aspa simples (`'`) fecha antecipadamente a string do campo login.
+2. O `--` é interpretado pelo banco de dados como o início de um comentário.
+3. O restante da consulta é ignorado, incluindo a parte responsável pela verificação da senha.
+4. **Resultado:** se a aplicação for vulnerável a SQL Injection, o banco pode retornar o usuário admin sem que a senha seja validada, permitindo o acesso à conta.
+---
+**3 cenários mais utilizados de SQL Injection**
 
 | Tipo de Injeção | Payload Injetado pelo Invasor | Consequência no PostgreSQL |
 | :--- | :--- | :--- |
 | **Bypass de Autenticação** | `' OR '1'='1` | A condição torna-se sempre verdadeira, retornando o primeiro usuário da tabela (geralmente o administrador do sistema). |
 | **Exfiltração de Dados (UNION SQLi)** | `' UNION SELECT id, nome, senha FROM usuarios --` | O invasor anexa tabelas sigilosas inteiras no resultado da consulta visível na tela, violando a LGPD. |
 | **Destruição / Adulteração (Stack Queries)** | `'; DROP TABLE pecas_industriais; --` | Dependendo do driver e das permissões do usuário, o invasor encerra a consulta atual e executa comandos de destruição em massa. |
+---
+### A Defesa Definitiva: *PREPARED STATEMENTS*
+
+Usar consulta com *Prepared Statements* evita que ocorra *SQL Injection*.
 
 ```mermaid
 sequenceDiagram
     autonumber
-    participant app as aplicação PHP
-     participant SGBD as PostgreSQL
+    participant App as Aplicação PHP
+    participant SGBD as PostgreSQL
 
     Note over App, SGBD: FLUXO SEGURO COM PREPARED STATEMENT
-    App->>SGBD: 1. PREPARE: "SELECT * FROM usuarios WHERE lofin = :user"
+    App->>SGBD: 1. PREPARE: "SELECT * FROM usuarios WHERE login = :user"
     Note over SGBD: Compila a query, gera o plano de execução<br/>e define que :user É ESTRITAMENTE DADO!
     SGBD-->>App: Query compilada pronta para receber parâmetros
     App->>SGBD: 2. EXECUTE: [":user" => "admin' --"]
@@ -1254,72 +1329,80 @@ sequenceDiagram
     SGBD-->>App: Retorna registro ou vazio (Sem Invasão!)
 ```
 
-**Por que a consulta preparada (`prepare`) é imune a injeções??**
+> **Por que a consulta preparada (`prepare`) é imune a injeções?**
 
-quando utilizamos `$pdo->prepare()`, ocorre uma **separação física e temporal** entre o **comando SQL** e os **dados do usuário**:
+Quando utilizamos `$pdo->prepare()`, ocorre uma **separação física e temporal** entre o ***comando SQL*** e os ***dados do usuário***:
 
-1. **Fase de Compilação(`prepare`)**: O BAnco recebe o molde da instrução com marcadores (`:parametros`). Ele analisa a sintaxe, otimiza o caminho de busca e compila o plano de execução. A estrutura lógica da consulta está **fechada e congelada**
-2. **Fase de Envio dos Dados (`execute`)**: O PHP envia apenas os valores literais. Memso que o invasor envie aspas, ponto-e-vírgula ou comandos `DROP`, o Banco tratará tudo exclusivamente como um texto inofensivo pertencente aquele campo.
-
+1. **Fase de Compilação (`prepare`):** O Banco recebe o molde da instrução com marcadores (`:parametros`). Ele analisa a sintaxe, otimiza o caminho de busca e compila o plano de execução. A estrutura lógica da consulta está **fechada e congelada**.
+2. **Fase de Envio dos Dados (`execute`):** O PHP envia apenas os valores literais. Mesmo que o invasor envie aspas, ponto-vírgula (`;`) ou comandos `DROP`, o Banco tratará tudo exclusivamente como um texto inofensivo pertencente a aquele campo.
 ---
+### Marcadores Nomeados e Posicionais no PDO
 
-### Marcadores nomeados e posicionais no PDO
+O PDO aceita 2 formatos de marcadores em *Prepared Statements*.
 
-O PDO aceita dois formatos de marcadores em prepared statements
-
-1. **Marcador Posicional (`?`)**
+1. **Marcadores Posicionais (`?`):**
 
 ```php
-//funcioma, mas é sujeito a erros de contagem de parametros em queries longas
+// funcionam, mas são sujeitos a erros de contagem de parâmetros em queries longas
 $sql = "INSERT INTO usuarios (id, nome, email, telefone) VALUES (?, ?, ?, ?)";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$id, $nome, $email, $telefone]);
 ```
-2. **Marcadores Nomeados (`:nome`) - Padrão Recomendado**
+
+2. **Marcadores Nomeados (`:nome`) - Padrão Recomendado:**
 
 ```php
-// Autenticação Autoexplicativa, altamente legível e a prova de inversão de ordem
+// autenticação autoexplicativa, altamente legível e a prova de inversão de ordem
 $sql = "INSERT INTO usuarios (id, nome, email, telefone) VALUE (:id, :nome, :email, :telefone)";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
     ":id"       => $id,
     ":nome"     => $nome,
     ":email"    => $email,
-    ":telefone  => $telefone
-])
+    ":telefone"  => $telefone
+]);
 ```
-#### **Método de Vinculação de Valores: `bindValue()` Vs. `bindParam()`**
+---
+### Método de Vinculação de Valores: `bindValue()` Vs. `bindParam()`
 
-Ao associar parâmetros a uma consulta `prepare`, pode-se utilizar dois métodos com comportamentos distintos. o `bindValue()` ou o `bindParam()`, o primeiro vincula um valor fixo no momento da chamada, enquanto o segundo vincula uma variável por referência e só avalia o valor real quando a consultal é executada.
+Ao associar parâmetros a uma consulta `prepare`, pode-se utilizar dois métodos com comportamentos distintos, o `bindValue()` ou o `bindParam()`. O primeiro vincula um valor fixo no momento da chamada, enquanto o segundo vincula uma variável por referência e só avalia o valor real quando a consultal é executada.
 
-**Exemplo `bindValue()`**: Associa o valor exato da variável naquele momento, é mais comum e seguro para 95% dos casos de uso.
+> **Exemplo `bindValue()`:**
+
+Associa o valor exato da variável naquele momento, é mais comum e seguro para 95% dos casos de uso.
+
 ```php
 $id = 10;
 $stmt->bindValue(":id", $id, PDO::PARAM_INT);
-$id = 20; //não altera o valor que já foi passado no bindValue!
-$stmt->execute(); //executa com id = 10
+$id = 20; // não altera o valor que já foi passado no bindValue!
+$stmt->execute(); // executa com id = 10
 ```
 
-**Exemplo `bindParam()`**: Associa a variável como uma referência de memória (`&`). O valor é lido no momento exato da chamada `execute`. Usar apenas em loops ou situações específicas que precisa alterar o valor repetidamente.
+> **Exemplo `bindParam()`:**
+
+Associa a variável como uma referência de memória (`&`). O valor é lido no momento exato da chamada de `execute`. Usado apenas em loops ou em situações específicas que precisam alterar o valor repetidamente.
+
 ```php
 $id = 10;
 $stmt->bindParam(":id", $id, PDO::PARAM_INT);
-$id = 20; //altera o valor de referência
-$stmt->execute(); // executa com o ID = 20
+$id = 20; // altera o valor de referência
+$stmt->execute(); // executa com id = 20
 ```
+---
+> ***OBS:*** *Tipagem Explícita com Constantes do PDO*
 
->obs: Tipagem Explícita com Constantes do PDO:
->Para Garantir que o PostgreSQL interprete corretamente o tipo de dado, inform-se sempre a constante correspondente:
+Para garantir que o PostgreSQL interprete corretamente o tipo de dado, informa-se sempre a constante correspondente:
+
 > * `PDO::PARAM_INT`: Para chaves primárias, quantidades e inteiros.
 > * `PDO::PARAM_STR`: Para textos, strings, datas e números decimais (`NUMERIC`).
 > * `PDO::PARAM_BOOL`: Para valores booleanos (`true`/`false`).
 > * `PDO::PARAM_NULL`: Para passar valores nulos explícitos.
+---
+### Padrão de Arquitetura *DAO (Data Access Object)*
 
-### O padrão de arquitetura DAO (DATA ACCESS OBJECT)
+Em aplicações profissionais, comandos SQL nunca devem ser escritos diretamente dentro de arquivos de interface visual (como páginas HTML ou controladores de tela).
 
-Em aplicações proficionais, comando SQL nunca devem ser escritos diretamente dentro de arquivps de interface visual (como páginas HTML ou controladores de tela)
-
-Para separar a **lógica de apresentação** da **lógica de acesso a dados**, usa-se o padrão de projetos **DAO(DATA ACCESS OBJECT)**:
+Para separar a **lógica de apresentação** da **lógica de acesso a dados**, usa-se o padrão de projetos ***DAO (DATA ACCESS OBJECT):***
 
 ```mermaid
 flowchart
@@ -1330,7 +1413,7 @@ flowchart
     A --> |"Chama métodos:<br/>salvar(), listar(), excluir()" | B
     B --> |"Executa Prepared Statement<br/>via PDO" | C
 ```
-
+---
 ---
 ## SEMANA 10 - Sessões, Cookies e Autenticação Segura
 
