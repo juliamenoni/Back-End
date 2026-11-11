@@ -2555,4 +2555,43 @@ final class ClienteController extends Controller {
 }
 ```
 
-l
+#### **4. Segurança em Formulários**
+
+**Proteção Contra CRSF(Cross-Site Request Forgery)**
+O ataque CSRF ocorre quando um site malicioso força o navegador de um usuário autenticado a enviar comando indesejados para a sua aplicação sem o consentimento dele. O Laravel neutraliza esse ataque gereando um otken criptografado único por sessão. Todo Formulário POST, PUT ou DELETE deve incluir a diretiva Blade:
+
+```blade
+<form action="{{ route('clientes.store') }}" method="POST">
+    @csrf
+    <!-- O Blade gera: <input type="hidden" name="_token" value="xY8z..."> -->
+</form>
+```
+
+**Simulação do método em Formulários (Method Spoofing)**
+A especificação do HTML5 possui um limitação histórica conhecida: *formulários HTML suportam nativamente apenas o método `GET` e `POST` no atributo `method=`.
+
+Como enviar requisições `PUT`para atualzia ou `DELETE`´para excluir dados através de formulários web padrão?
+
+O Laravel resolve isso através de técnica de **Method Spoofing**: que define como `method="POST"` e injeta o campo oculto `_metrhod`através da diretiva Blade `@method("verbo")`:
+
+**Exemplos Práticos**:
+
+- Formulário de Atualização (PUT):
+```blade
+<form action="{{ route('clientes.update', $cliente['id']) }}" method="POST">
+    @csrf
+    @method('PUT')
+    <!-- O Blade gera: <input type="hidden" name="_method" value="PUT"> -->
+    <button type="submit">Salvar Alterações</button>
+</form>
+```
+
+- Botão de Exclusão Destrutiva (DELETE):
+```blade
+<form action="{{ route('clientes.destroy', $cliente['id']) }}" method="POST" onsubmit="return confirm('Confirmar exclusão?');">
+    @csrf
+    @method('DELETE')
+    <button type="submit" style="color:red;">Excluir Parceiro</button>
+</form>
+```
+

@@ -8,12 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ativo extends Model
 {
-    use HasFactory; // biblioteca para facilitar a criação de dados para teste
+    use HasFactory; //uma biblioteca para facilitar a criação de dados para teste. 
+    //atributos
+    protected $table = "ativos"; //nome da tabela no banco de dados
 
-    // atributos
-    protected $table = "ativos"; // nome da tabela no banco de dados
-
-    // atributo das colunas da tabela
+    //atributos das colunas da tabela
     protected $fillable = [
         "codigo_patrimonio",
         "nome",

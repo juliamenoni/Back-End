@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
@@ -27,7 +26,7 @@ class AtivoController extends Controller
         ]);
     }
 
-    // Método para retornar o status do servidor em um json
+    // método para retornar o status do servidor em um json
     public function status(): JsonResponse {
         return response()->json([
             "plataforma" => config("app.name"),
@@ -37,4 +36,5 @@ class AtivoController extends Controller
             "timestamp" => now()->toIso8601String()
         ]);
     }
+
 }

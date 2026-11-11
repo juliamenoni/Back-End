@@ -1,13 +1,13 @@
-# Meu Primeiro Projeto Laravel - SENAI Asset Manager (Sistema de Gestão de Ativos Industriais e Maquinários)
+# Meu Primeiro Projeto Laravel - SENAI Asset Manager (Sistema de gestão de ativos Industriais e Maquinários)
 
 ## 1. Criação da Aplicação
 
-Abrir o terminal do VSCode na pasta desejada e adicionar o projeto usando o `composer`.
+abrir o termianr do VSCode na pasta desejada e adicionar o projeto usando o composer
 
 ```bash
 php --version #verifica a versão do php instalada
 
-composer --version #verifica a versão do composer instalada
+composer --version #verifica a versãao do composer instalada
 
 #cria o projeto dentro da pasta atual
 composer create-project laravel/laravel nome-do-projeto
@@ -15,63 +15,66 @@ composer create-project laravel/laravel nome-do-projeto
 #acessa a pasta do projeto
 cd nome-do-projeto
 ```
----
 
 ## 2. Configuração de Arquivo de Blindagem `.env`
 
-- Abrir o arquivo e configurar os parâmetros.
+- Abrir o arquivo e configurar os paraâmetros
 
-- Configurar as informações das variáveis de ambiente para o projeto.
+- Configurar as informações das variáveis de ambiente para o projeto
 
-- Inserir a chave de criptrografia caso não tenha -> `php artisan key:generate`.
+- Inserir a chave de criptrografia caso nã tenha
 
----
+`php artisan key:generate`
 
-## Criação de uma Classe Model
+## Criação de uma Classe Model 
 
-- Gerar o Model para representar as máquinas e equipamentos do sistema.
+Gerar o Model para Representar as máquinas e equipamentos do sistema
 
-- Criar uma classe chamada Ativo -> `php artisan make:model Ativo`.
+criar uma classe chamada Ativo
 
-- `app/Models/Ativo.php` -> arquivo criado.
+`php artisan make:model Ativo`
 
----
+`app/Models/Ativo.php` - arquivo criado
 
-## 3. Criação de um Controller
+## 3. Criação de um Controller 
 
-- Gerar um Controller para gerenciar as máquinas e equipamentos (Ativo) -> `php artisan make:controller AtivoController --resource`.
+Gerar um Controller para gerenciar as máquinas e equipamentos (Ativo)
 
-- `app/Http/Controllers/AtivoController.php` -> arquivo criado.
+`php artisan make:controller AtivoController --resource`
 
----
+`app/Http/Controllers/AtivoController.php` - arquivo criado
 
 ## 4. Rotas de Navegação da Aplicação
 
-`routes/web.php` -> criação de duas rotas de tipo get (uma de ativos mokados e outra de status da infra).
+`routes/web.php`
 
----
+criação de duas rotas de tipo get
+
+uma de ativos mokados
+uma de status da infra
 
 ## 5. Camada de Visualização `Blade`
 
-- `resources/views/` -> criação da pasta de ativos e criação do `index.blade.php`.
+`resources/views/`
 
-- **blade** é a engine de visualização do Laravel, que permite criar páginas web dinâmicas com sintaxe simples e direta.
+criar a pasta de ativos
+e criar index.blade.php
 
-- Faz uso do **databind** -> é o processo de vincular dados do backend (controlador ou do modelo) à elementos da interface do usuário (UI).
+- blade é a engine de visualização do laravel, que permite criar páginas web dinâmicas com sintaxe simples e direta
+- faz uso do databind => é o processo de vincular dados do backend (controlador ou do modelo) a elementos da interface do usuários (UI)
+- databind no blade é feito com a sintaxe `{{ $variavel }}`
 
-- **databind** no **blade** é feito com a sintaxe `{{ $variavel }}`.
 
----
 
-## Inicialização e Homologação
+## 6. Inicialização e Inspeção
 
-- Inspecionar -> `php artisan about`.
+Inspecionar 
 
-- Homologar -> `php artisan serve`.
+`php artisan about`
 
-- Migrar -> `php artisan migrate`.
+Homolocar 
+`php artisan serve`
 
----
 
 ## 7. Roteiro de Homologação e Teste
 
@@ -129,3 +132,92 @@ Execute a sequência de 7 testes de validação técnica no laboratório:
 7. **Teste 7 — Verificação do Painel de Saúde (`php artisan about`):**  
    Execute `php artisan about` no terminal.  
    *Resultado Esperado:* Todos os indicadores técnicos devem estar validados em verde.
+
+
+---
+
+# Continuação do Projeto: construção  da Gestão de Parceiros Industriais (Módulo Cliente)
+
+## Criação do Model e Migrações do Banco de Dados
+
+Crie o model e o arquivo de migração para a tabela `clientes`
+
+`php artisan make:model Cliente -m`
+
+-m => diretamente relaciada a migração do banco de dados
+
+são Criados 2 arquivos 
+- `app/Model` 
+- `databa/migration`
+
+## Gera e Implementar `ClienteController`
+
+`php artisan make:controller ClienteController --resource`
+
+é criado o arquivo 
+
+`app/Http/Controllers/ClienteController.php`
+
+> Obs: Ao usarmos a flag `--resource` no comando artisan, 7 metodos são criados automaticamento, bastando preencher os métodos coms os elementos lógicos
+
+## Criamos a Rotas Mapeadas da API no Arquivo (`routes/web.php`)
+
+Depois de criar o model, executar a migração e implemetar o controller, devemos declarar as rotas do módulo da api
+
+Podemos criar rotas customizadas ou rotas padrão usando o recursos `resource` do LARAVEL
+
+## Construção das Views usando o Blade 
+
+Crie o Diretório `resources/views/clientes`
+
+e dentro do diretório crie os arquivos 
+- index.blade.php
+- create.blade.php
+- show.blade.php
+- edit.blade.php
+
+## Execute a sequência de 7 testes no laboratório:
+
+1. **Teste 1 — Listagem Geral e Inspeção das Rotas (`GET /clientes`):**  
+   Acesse no navegador `http://localhost:8000/clientes`.  
+   *Resultado Esperado:* A tabela renderiza os 3 clientes iniciais de teste com botões de ação RESTful.
+
+2. **Teste 2 — Cadastro via Verbo POST e Proteção Anti-CSRF (`POST /clientes`):**  
+   Clique em **+ Cadastrar Parceiro**, informe Razão Social *"Siemens Automação"*, CNPJ *"12.345.678/0001-90"*, setor *"Robótica"* e submeta.  
+   *Resultado Esperado:* A requisição POST é validada com `@csrf`, redireciona para a lista exibindo a mensagem verde *"Cliente cadastrado com sucesso!"* e o novo registro #4 no rodapé da tabela.
+
+3. **Teste 3 — Exibição de Ficha Técnica (`GET /clientes/{id}`):**  
+   Clique no botão **Ficha** do cliente #4.  
+   *Resultado Esperado:* A rota invoca `show(4)` e renderiza a ficha técnica detalhada.
+
+4. **Teste 4 — Teste de Constraint com Falha Intencional (404 Automático):**  
+   Tente digitar manualmente na barra de endereços do navegador: `http://localhost:8000/clientes/palavra`.  
+   *Resultado Esperado:* Resposta HTTP 404 imediata. O constraint `whereNumber('cliente')` barrou a requisição antes mesmo de invocar o controller!
+
+5. **Teste 5 — Atualização com Method Spoofing (`PUT /clientes/{id}`):**  
+   Entre em **Editar**, mude a Razão Social para *"Siemens Energy & Automation"* e envie.  
+   Abra o DevTools (**F12 ➔ Network/Rede**) ao enviar:  
+   *Resultado Esperado:* O formulário envia um POST com payload contendo `_method: PUT` e `_token: ...`. O Laravel despacha para a ação `update()` e salva as alterações.
+
+6. **Teste 6 — Exclusão Segura via Verbo DELETE (`DELETE /clientes/{id}`):**  
+   Clique no botão vermelho **Excluir** do cliente #4 e confirme a caixa de diálogo.  
+   *Resultado Esperado:* A requisição DELETE remove o item da sessão e recarrega a tabela sem o parceiro excluído.
+
+7. **Teste 7 — Simulação de Falha de Segurança CSRF (HTTP 419):**  
+   No arquivo `resources/views/clientes/create.blade.php`, comente temporariamente a linha `@csrf` e tente cadastrar um novo cliente.  
+   *Resultado Esperado:* O Laravel bloqueia a requisição e exibe a tela de erro **419 | PAGE EXPIRED**, comprovando a proteção ativa do middleware `VerifyCsrfToken`!  
+   *Restauração:* Descomente a diretiva `@csrf` e recarregue.
+
+
+---
+
+## Criar o Módulo de Produtos
+
+class produto {
+   atributos
+      nome
+      fabricante
+      quantidade
+      preco
+
+}
