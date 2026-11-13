@@ -2749,3 +2749,59 @@ O Blade envolve internamente a variável com a função nativa `htmlspecialchars
 <!-- &lt;script&gt;alert('Vulnerabilidade XSS!');&lt;/script&gt; -->
 ```
 
+#### **4. Diretivas de Fluxo, Condicionais e Laços Otimizados**
+
+O Blade substitui a sintaxe verbosa do PHP tradicional (`<?php if(...): ?>`) por diretivas iniciada em `@`.
+
+**Condicionais: `@if`, `@unless`, `@isset`, `@empty` e `@switch`**
+
+``blade
+{{-- 1. Condicional clássica --}}
+@if($ordem->status === 'CRITICA')
+    <span class="alerta-vermelho">Risco de Parada de Linha!</span>
+@elseif($ordem->status === 'ALERTA')
+    <span class="alerta-amarelo">Atenção Técnica</span>
+@else
+    <span class="alerta-verde">Operação Estável</span>
+@endif
+
+{{-- 2. @unless: Executa somente se a condição for FALSA (o inverso do if) --}}
+@unless($ordem->isConcluida())
+    <button>Finalizar Ordem de Serviço</button>
+@endunless
+
+{{-- 3. @isset e @empty --}}
+@isset($ordem->tecnico_responsavel)
+    <p>Responsável Técnico: {{ $ordem->tecnico_responsavel }}</p>
+@endisset
+```
+
+**O Laço de Repetição: `@forelse ... @empty ... @endforelse`**
+
+Em Aplicações profissionais, é um erro exibir uma tabela vazia sm aviso ao usuário. Em vez de escrever um `@if(count($lista) > 0)` seguido de @foreach`, o Blade entrega o `@forelse`:
+
+```blade
+@forelse($ordens as $ordem)
+    <div class="linha-ordem">
+        <strong>#{{ $loop->iteration }}</strong> - {{ $ordem->titulo }}
+    </div>
+@empty
+    <div class="alerta-vazio">
+        Nenhuma ordem de serviço pendente para esta máquina.
+    </div>
+@endforelse
+```
+
+**Outros Elementos de Iteração(repetição)**
+
+Dentro de qualquer laço `@foreach` ou `@forelse`, o Blade disponibiliza automaticamente o objeto `$loop`, repleto de propriedades úteis:
+
+| Propriedade de `$loop` | Tipo de Retorno | Finalidade Prática no Back-End |
+| :--- | :---: | :--- |
+| `$loop->index` | `int` | Índice numérico baseado em 0 (0, 1, 2...). |
+| `$loop->iteration` | `int` | Contagem ordinal legível baseada em 1 (1, 2, 3...). |
+| `$loop->first` | `bool` | Retorna `true` se for a primeira iteração do laço. |
+| `$loop->last` | `bool` | Retorna `true` se for a última iteração do laço. |
+| `$loop->even` | `bool` | Retorna `true` em iterações pares (ideal para efeito zebra em tabelas). |
+| `$loop->odd` | `bool` | Retorna `true` em iterações ímpares. |
+| `$loop->count` | `int` | Quantidade total de itens sendo iterados na coleção. |
