@@ -1,4 +1,5 @@
 # LISTA DE EXERCÍCIOS DE FIXAÇÃO E PRÁTICA - `CONEXÃO BANCO DE DADOS PDO`
+
 Lista de fixação - Julia G. Menoni 1DEV46B T2 25/09/2026
 
 * **Parte A: Exercícios Teóricos de Fixação**
