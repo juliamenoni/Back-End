@@ -2805,3 +2805,5 @@ Dentro de qualquer laço `@foreach` ou `@forelse`, o Blade disponibiliza automat
 | `$loop->even` | `bool` | Retorna `true` em iterações pares (ideal para efeito zebra em tabelas). |
 | `$loop->odd` | `bool` | Retorna `true` em iterações ímpares. |
 | `$loop->count` | `int` | Quantidade total de itens sendo iterados na coleção. |
+
+#### **5. Herança de Layout e componentes Modernos**.

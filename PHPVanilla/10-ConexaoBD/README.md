@@ -15,12 +15,13 @@ Caso não aparecça:
 * Localize a linha `;extention=pdo_pgsql`e remova o ponto e vírgula inicial (`;`).
 * Salve o Arquivo e valide novamente o comando
 
-2.  Validar o serviço do PostgresSQL
+2. Validar o Serviço do PostgreSQL
 
-instalar uma extensão no VSCODE -> PostgresSQL (chris Kolkman)
-e configurar uma conexão
+Instalar uma extensão do VSCode -> PostgreSQL (Chris Kolkman)
+E configurar uma Conexão
 
-## Passo 2: Estrutura de diretórios do projeto
+## Passo 2: Estrutura de Diretórios do Projeto
+
 Organize a raiz do projeto exatamente com a seguinte árvore de pastas:
 
 ```text
@@ -36,6 +37,7 @@ SAFormativa/
 └── README.md               <- Documentação do projeto
 ```
 
+## Passo 3: Executar o Script DDL no PostgreSQL (`schema.sql`)
 
 ```sql
 -- Cria o banco de dados da biblioteca (caso use o terminal psql)
@@ -60,4 +62,17 @@ VALUES
 ('1984', 'George Orwell', 45.00, 'RESERVADO');
 ```
 
-## Passo 4:  criando o arquivo de configuração (`config/database.ini`)
+## Passo 4: Criando o Arquivo de Configuração (`config/database.ini`)
+
+Crie o arquivo. Ajuste as chaves de acesso ao banco de dado
+
+Colocar o Arquivo de Configuração dentro do `.gitignore`
+
+
+## Passo 5: Contruindo a Classe Singleton e Conexão com o Banco de Dados (`src/ConexaoBanco.php`)
+
+criação de uma classe segura de conexão usando Singleton PDO e suas Flags de Segurança, e Envelopamento (.ini) de Dados.
+
+## Passo 6: Construindo a Interfacce de Diagnóstico do Banco de Dados (`index.php`)
+
+
