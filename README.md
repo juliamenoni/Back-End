@@ -2807,3 +2807,36 @@ Dentro de qualquer laço `@foreach` ou `@forelse`, o Blade disponibiliza automat
 | `$loop->count` | `int` | Quantidade total de itens sendo iterados na coleção. |
 
 #### **5. Herança de Layout e componentes Modernos**.
+
+Elemento usado para criar `section`  que serão repetidas em diversa págians como cabeçalho ou rodapés, por exemplo. 
+
+```mermaid
+flowchart TD
+    mestre["Layout Mestre: layouts/app.blade.php<br/>• Estrutura HTML5 global<br/>• Barra de navegação e rodapé<br/>• @yield('titulo') e @yield('conteudo')<br/>• @stack('scripts')"]
+
+    v1["View Filha: ordens/index.blade.php<br/>• @extends('layouts.app')<br/>• @section('conteudo')<br/>• Consome <x-card-kpi>"]
+    v2["View Filha: equipamentos/index.blade.php<br/>• @extends('layouts.app')<br/>• @section('conteudo')<br/>• Consome <x-badge-status>"]
+
+    mestre --> v1
+    mestre --> v2
+
+    style mestre fill:#fed7aa,stroke:#ea580c,stroke-width:2px,color:#7c2d12
+    style v1 fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d
+    style v2 fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
+```
+
+**Herança Clássica com `@extends`, `@section` e `@yield`:**
+
+- **`@yield('nome_secao')`**: Define um ponto de inserção no layout mestre.
+- **`@extends('layouts.app')`**: Informa que a view filha herda toda a estrutura do layout mestre.
+- **`@section('nome_secao') ... @endsection`**: Injeta o bloco de conteúdo correspondente no `@yield`.
+
+**Componenetes Blade Modernos**
+
+Arquiteturas de software modernas priorizam componentes isolados com escopo próprio.  
+Qualquer arquivo criado em `resources/views/components/nome-componente.blade.php` pode ser consumido como uma tag HTML personalizada: `<x-nome-componente />`.
+
+- **Passagem de Propriedades:** `@props(['titulo', 'valor', 'cor' => '#38bdf8'])`.
+- **Slots Padrão:** O corpo interno da tag (`{{ $slot }}`).
+- **Slots Nomeados:** Blocos estruturados com `<x-slot:cabecalho>...</x-slot:cabecalho>`.
+
